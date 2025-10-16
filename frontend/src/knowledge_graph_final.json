@@ -1,0 +1,2473 @@
+{
+  "meta": {
+    "description": "Integrated KG with embedded node colors. Relations: gene→participates_in→pathway, drug→targets→pathway & targets_gene, pathway→associated_with→disease, biomarker→indicates→pathway."
+  },
+  "nodes": [
+    {
+      "id": "disease:Lung Cancer",
+      "label": "Lung Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "lung",
+          "NSCLC",
+          "SCLC"
+        ]
+      }
+    },
+    {
+      "id": "disease:Breast Cancer",
+      "label": "Breast Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "breast"
+        ]
+      }
+    },
+    {
+      "id": "pathway:PI3K/AKT activation",
+      "label": "PI3K/AKT activation",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Regulates neuron survival by blocking cell death, affecting axon diameter, and promoting translation"
+      }
+    },
+    {
+      "id": "pathway:MAPK family signaling cascades",
+      "label": "MAPK family signaling cascades",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Involved in various cellular processes including cell proliferation, differentiation, and survival"
+      }
+    },
+    {
+      "id": "pathway:Signaling by EGFR",
+      "label": "Signaling by EGFR",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Phosphorylated tyrosines serve as binding sites for the recruitment of signal transducers, stimulating intracellular signal transduction cascades"
+      }
+    },
+    {
+      "id": "pathway:Transcriptional Regulation by TP53",
+      "label": "Transcriptional Regulation by TP53",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "TP53 regulates transcription of genes involved in metabolism, survival, senescence, apoptosis, and DNA damage response"
+      }
+    },
+    {
+      "id": "pathway:Apoptosis",
+      "label": "Apoptosis",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "The intrinsic pathway of apoptosis functions in response to intracellular stress, leading to programmed cell death"
+      }
+    },
+    {
+      "id": "gene:EGFR",
+      "label": "EGFR",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene is a transmembrane glycoprotein that is a member of the protein kinase superfamily. This protein is a receptor for members of the epidermal growth factor family. EGFR is a cell surface protein that binds to epidermal growth factor, thus inducing receptor dimerization and tyrosine autophosphorylation leading to cell proliferation. Mutations in this gene are associated with lung cancer. EGFR is a component of the cytokine storm which contributes to a severe form of Coronavirus Disease 2019 (COVID-19) resulting from infection with severe acute respiratory syndrome coronavirus-2 (SARS-CoV-2). [provided by RefSeq, Jul 2020]"
+      }
+    },
+    {
+      "id": "pathway:EGFR / PI3K-Akt signaling",
+      "label": "EGFR / PI3K-Akt signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:Oncogene",
+      "label": "Oncogene",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {}
+    },
+    {
+      "id": "gene:KRAS",
+      "label": "KRAS",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene, a Kirsten ras oncogene homolog from the mammalian ras gene family, encodes a protein that is a member of the small GTPase superfamily. A single amino acid substitution is responsible for an activating mutation. The transforming protein that results is implicated in various malignancies, including lung adenocarcinoma, mucinous adenoma, ductal carcinoma of the pancreas and colorectal carcinoma. Alternative splicing leads to variants encoding two isoforms that differ in the C-terminal region. [provided by RefSeq, Jul 2008]"
+      }
+    },
+    {
+      "id": "pathway:RAS/MAPK signaling",
+      "label": "RAS/MAPK signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:ALK",
+      "label": "ALK",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a receptor tyrosine kinase, which belongs to the insulin receptor superfamily. This protein comprises an extracellular domain, an hydrophobic stretch corresponding to a single pass transmembrane region, and an intracellular kinase domain. It plays an important role in the development of the brain and exerts its effects on specific neurons in the nervous system. This gene has been found to be rearranged, mutated, or amplified in a series of tumours including anaplastic large cell lymphomas, neuroblastoma, and non-small cell lung cancer. The chromosomal rearrangements are the most common genetic alterations in this gene, which result in creation of multiple fusion genes in tumourigenesis, including ALK (chromosome 2)/EML4 (chromosome 2), ALK/RANBP2 (chromosome 2), ALK/ATIC (chromosome 2), ALK/TFG (chromosome 3), ALK/NPM1 (chromosome 5), ALK/SQSTM1 (chromosome 5), ALK/KIF5B (chromosome 10), ALK/CLTC (chromosome 17), ALK/TPM4 (chromosome 19), and ALK/MSN (chromosome X).[provided by RefSeq, Jan 2011]"
+      }
+    },
+    {
+      "id": "pathway:ALK signaling / RTK fusions",
+      "label": "ALK signaling / RTK fusions",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:BRAF",
+      "label": "BRAF",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a protein belonging to the RAF family of serine/threonine protein kinases. This protein plays a role in regulating the MAP kinase/ERK signaling pathway, which affects cell division, differentiation, and secretion. Mutations in this gene, most commonly the V600E mutation, are the most frequently identified cancer-causing mutations in melanoma, and have been identified in various other cancers as well, including non-Hodgkin lymphoma, colorectal cancer, thyroid carcinoma, non-small cell lung carcinoma, hairy cell leukemia and adenocarcinoma of lung. Mutations in this gene are also associated with cardiofaciocutaneous, Noonan, and Costello syndromes, which exhibit overlapping phenotypes. A pseudogene of this gene has been identified on the X chromosome. [provided by RefSeq, Aug 2017]"
+      }
+    },
+    {
+      "id": "pathway:MAPK/ERK signaling",
+      "label": "MAPK/ERK signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:MET",
+      "label": "MET",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a member of the receptor tyrosine kinase family of proteins and the product of the proto-oncogene MET. The encoded preproprotein is proteolytically processed to generate alpha and beta subunits that are linked via disulfide bonds to form the mature receptor. Further processing of the beta subunit results in the formation of the M10 peptide, which has been shown to reduce lung fibrosis. Binding of its ligand, hepatocyte growth factor, induces dimerization and activation of the receptor, which plays a role in cellular survival, embryogenesis, and cellular migration and invasion. Mutations in this gene are associated with papillary renal cell carcinoma, hepatocellular carcinoma, and various head and neck cancers. Amplification and overexpression of this gene are also associated with multiple human cancers. [provided by RefSeq, May 2016]"
+      }
+    },
+    {
+      "id": "pathway:HGF/MET signaling",
+      "label": "HGF/MET signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:ERBB2",
+      "label": "ERBB2",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a member of the epidermal growth factor (EGF) receptor family of receptor tyrosine kinases. This protein has no ligand binding domain of its own and therefore cannot bind growth factors. However, it does bind tightly to other ligand-bound EGF receptor family members to form a heterodimer, stabilizing ligand binding and enhancing kinase-mediated activation of downstream signalling pathways, such as those involving mitogen-activated protein kinase and phosphatidylinositol-3 kinase. Allelic variations at amino acid positions 654 and 655 of isoform a (positions 624 and 625 of isoform b) have been reported, with the most common allele, Ile654/Ile655, shown here. Amplification and/or overexpression of this gene has been reported in numerous cancers, including breast and ovarian tumors. Alternative splicing results in several additional transcript variants, some encoding different isoforms and others that have not been fully characterized. [provided by RefSeq, Jul 2008]"
+      }
+    },
+    {
+      "id": "pathway:ERBB2 / PI3K-Akt signaling",
+      "label": "ERBB2 / PI3K-Akt signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:PIK3CA",
+      "label": "PIK3CA",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Phosphatidylinositol 3-kinase is composed of an 85 kDa regulatory subunit and a 110 kDa catalytic subunit. The protein encoded by this gene represents the catalytic subunit, which uses ATP to phosphorylate PtdIns, PtdIns4P and PtdIns(4,5)P2. This gene has been found to be oncogenic and has been implicated in cervical cancers. A pseudogene of this gene has been defined on chromosome 22. [provided by RefSeq, Apr 2016]"
+      }
+    },
+    {
+      "id": "pathway:PI3K-Akt signaling",
+      "label": "PI3K-Akt signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:FGFR1",
+      "label": "FGFR1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene is a member of the fibroblast growth factor receptor (FGFR) family, where amino acid sequence is highly conserved between members and throughout evolution. FGFR family members differ from one another in their ligand affinities and tissue distribution. A full-length representative protein consists of an extracellular region, composed of three immunoglobulin-like domains, a single hydrophobic membrane-spanning segment and a cytoplasmic tyrosine kinase domain. The extracellular portion of the protein interacts with fibroblast growth factors, setting in motion a cascade of downstream signals, ultimately influencing mitogenesis and differentiation. This particular family member binds both acidic and basic fibroblast growth factors and is involved in limb induction. Mutations in this gene have been associated with Pfeiffer syndrome, Jackson-Weiss syndrome, Antley-Bixler syndrome, osteoglophonic dysplasia, and autosomal dominant Kallmann syndrome 2. Chromosomal aberrations involving this gene are associated with stem cell myeloproliferative disorder and stem cell leukemia lymphoma syndrome. Alternatively spliced variants which encode different protein isoforms have been described; however, not all variants have been fully characterized. [provided by RefSeq, Jul 2008]"
+      }
+    },
+    {
+      "id": "pathway:FGFR signaling",
+      "label": "FGFR signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:CCND1",
+      "label": "CCND1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene belongs to the highly conserved cyclin family, whose members are characterized by a dramatic periodicity in protein abundance throughout the cell cycle. Cyclins function as regulators of CDK kinases. Different cyclins exhibit distinct expression and degradation patterns which contribute to the temporal coordination of each mitotic event. This cyclin forms a complex with and functions as a regulatory subunit of CDK4 or CDK6, whose activity is required for cell cycle G1/S transition. This protein has been shown to interact with tumor suppressor protein Rb and the expression of this gene is regulated positively by Rb. Mutations, amplification and overexpression of this gene, which alters cell cycle progression, are observed frequently in a variety of human cancers. [provided by RefSeq, Dec 2019]"
+      }
+    },
+    {
+      "id": "pathway:Cell cycle regulation (Cyclin D1/CDK4/6)",
+      "label": "Cell cycle regulation (Cyclin D1/CDK4/6)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:MYC",
+      "label": "MYC",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene is a proto-oncogene and encodes a nuclear phosphoprotein that plays a role in cell cycle progression, apoptosis and cellular transformation. The encoded protein forms a heterodimer with the related transcription factor MAX. This complex binds to the E box DNA consensus sequence and regulates the transcription of specific target genes. Amplification of this gene is frequently observed in numerous human cancers. Translocations involving this gene are associated with Burkitt lymphoma and multiple myeloma in human patients. There is evidence to show that translation initiates both from an upstream, in-frame non-AUG (CUG) and a downstream AUG start site, resulting in the production of two isoforms with distinct N-termini. [provided by RefSeq, Aug 2017]"
+      }
+    },
+    {
+      "id": "pathway:MYC transcriptional network",
+      "label": "MYC transcriptional network",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:RB1",
+      "label": "RB1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene is a negative regulator of the cell cycle and was the first tumor suppressor gene found. The encoded protein also stabilizes constitutive heterochromatin to maintain the overall chromatin structure. The active, hypophosphorylated form of the protein binds transcription factor E2F1. Defects in this gene are a cause of childhood cancer retinoblastoma (RB), bladder cancer, and osteogenic sarcoma. [provided by RefSeq, Jul 2008]"
+      }
+    },
+    {
+      "id": "pathway:RB pathway / E2F regulation",
+      "label": "RB pathway / E2F regulation",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:Tumor suppressor",
+      "label": "Tumor suppressor",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {}
+    },
+    {
+      "id": "gene:TP53",
+      "label": "TP53",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a tumor suppressor protein containing transcriptional activation, DNA binding, and oligomerization domains. The encoded protein responds to diverse cellular stresses to regulate expression of target genes, thereby inducing cell cycle arrest, apoptosis, senescence, DNA repair, or changes in metabolism. Mutations in this gene are associated with a variety of human cancers, including hereditary cancers such as Li-Fraumeni syndrome. Alternative splicing of this gene and the use of alternate promoters result in multiple transcript variants and isoforms. Additional isoforms have also been shown to result from the use of alternate translation initiation codons from identical transcript variants (PMIDs: 12032546, 20937277). [provided by RefSeq, Dec 2016]"
+      }
+    },
+    {
+      "id": "pathway:p53 signaling pathway",
+      "label": "p53 signaling pathway",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:BRCA1",
+      "label": "BRCA1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a 190 kD nuclear phosphoprotein that plays a role in maintaining genomic stability, and it also acts as a tumor suppressor. The BRCA1 gene contains 22 exons spanning about 110 kb of DNA. The encoded protein combines with other tumor suppressors, DNA damage sensors, and signal transducers to form a large multi-subunit protein complex known as the BRCA1-associated genome surveillance complex (BASC). This gene product associates with RNA polymerase II, and through the C-terminal domain, also interacts with histone deacetylase complexes. This protein thus plays a role in transcription, DNA repair of double-stranded breaks, and recombination. Mutations in this gene are responsible for approximately 40% of inherited breast cancers and more than 80% of inherited breast and ovarian cancers. Alternative splicing plays a role in modulating the subcellular localization and physiological function of this gene. Many alternatively spliced transcript variants, some of which are disease-associated mutations, have been described for this gene, but the full-length natures of only some of these variants has been described. A related pseudogene, which is also located on chromosome 17, has been identified. [provided by RefSeq, May 2020]"
+      }
+    },
+    {
+      "id": "pathway:Homologous recombination repair",
+      "label": "Homologous recombination repair",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:BRCA2",
+      "label": "BRCA2",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Inherited mutations in BRCA1 and this gene, BRCA2, confer increased lifetime risk of developing breast or ovarian cancer. Both BRCA1 and BRCA2 are involved in maintenance of genome stability, specifically the homologous recombination pathway for double-strand DNA repair. The largest exon in both genes is exon 11, which harbors the most important and frequent mutations in breast cancer patients. The BRCA2 gene was found on chromosome 13q12.3 in human. The BRCA2 protein contains several copies of a 70 aa motif called the BRC motif, and these motifs mediate binding to the RAD51 recombinase which functions in DNA repair. BRCA2 is considered a tumor suppressor gene, as tumors with BRCA2 mutations generally exhibit loss of heterozygosity (LOH) of the wild-type allele. [provided by RefSeq, May 2020]"
+      }
+    },
+    {
+      "id": "gene:PTEN",
+      "label": "PTEN",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene was identified as a tumor suppressor that is mutated in a large number of cancers at high frequency. The protein encoded by this gene is a phosphatidylinositol-3,4,5-trisphosphate 3-phosphatase. It contains a tensin like domain as well as a catalytic domain similar to that of the dual specificity protein tyrosine phosphatases. Unlike most of the protein tyrosine phosphatases, this protein preferentially dephosphorylates phosphoinositide substrates. It negatively regulates intracellular levels of phosphatidylinositol-3,4,5-trisphosphate in cells and functions as a tumor suppressor by negatively regulating AKT/PKB signaling pathway. The use of a non-canonical (CUG) upstream initiation site produces a longer isoform that initiates translation with a leucine, and is thought to be preferentially associated with the mitochondrial inner membrane. This longer isoform may help regulate energy metabolism in the mitochondria. A pseudogene of this gene is found on chromosome 9. Alternative splicing and the use of multiple translation start codons results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Feb 2015]"
+      }
+    },
+    {
+      "id": "pathway:PI3K/AKT pathway inhibition",
+      "label": "PI3K/AKT pathway inhibition",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:STK11",
+      "label": "STK11",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene is a serine/threonine kinase that regulates cell polarity and energy metabolism and functions as a tumor suppressor. Mutations in this gene have been associated with the autosomal dominant Peutz-Jeghers syndrome, as well as with skin, pancreatic, and testicular cancers. [provided by RefSeq, May 2022]"
+      }
+    },
+    {
+      "id": "pathway:AMPK / LKB1 signaling",
+      "label": "AMPK / LKB1 signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:KEAP1",
+      "label": "KEAP1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a protein containing KELCH-1 like domains, as well as a BTB/POZ domain. Kelch-like ECH-associated protein 1 interacts with NF-E2-related factor 2 in a redox-sensitive manner and the dissociation of the proteins in the cytoplasm is followed by transportation of NF-E2-related factor 2 to the nucleus. This interaction results in the expression of the catalytic subunit of gamma-glutamylcysteine synthetase. Two alternatively spliced transcript variants encoding the same isoform have been found for this gene. [provided by RefSeq, Jul 2008]"
+      }
+    },
+    {
+      "id": "pathway:NRF2 oxidative stress response",
+      "label": "NRF2 oxidative stress response",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:SMARCA4",
+      "label": "SMARCA4",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "The protein encoded by this gene is a member of the SWI/SNF family of proteins and is similar to the brahma protein of Drosophila. Members of this family have helicase and ATPase activities and are thought to regulate transcription of certain genes by altering the chromatin structure around those genes. The encoded protein is part of the large ATP-dependent chromatin remodeling complex SNF/SWI, which is required for transcriptional activation of genes normally repressed by chromatin. In addition, this protein can bind BRCA1, as well as regulate the expression of the tumorigenic protein CD44. Mutations in this gene cause rhabdoid tumor predisposition syndrome type 2. Multiple transcript variants encoding different isoforms have been found for this gene. [provided by RefSeq, May 2012]"
+      }
+    },
+    {
+      "id": "pathway:SWI/SNF chromatin remodeling",
+      "label": "SWI/SNF chromatin remodeling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:CDH1",
+      "label": "CDH1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "This gene encodes a classical cadherin of the cadherin superfamily. Alternative splicing results in multiple transcript variants, at least one of which encodes a preproprotein that is proteolytically processed to generate the mature glycoprotein. This calcium-dependent cell-cell adhesion protein is comprised of five extracellular cadherin repeats, a transmembrane region and a highly conserved cytoplasmic tail. Mutations in this gene are correlated with gastric, breast, colorectal, thyroid and ovarian cancer. Loss of function of this gene is thought to contribute to cancer progression by increasing proliferation, invasion, and/or metastasis. The ectodomain of this protein mediates bacterial adhesion to mammalian cells and the cytoplasmic domain is required for internalization. This gene is present in a gene cluster with other members of the cadherin family on chromosome 16. [provided by RefSeq, Nov 2015]"
+      }
+    },
+    {
+      "id": "pathway:Cell adhesion (E-cadherin)",
+      "label": "Cell adhesion (E-cadherin)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "gene:CD274",
+      "label": "CD274",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "pathway:PD-1/PD-L1 immune checkpoint",
+      "label": "PD-1/PD-L1 immune checkpoint",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:Biomarker",
+      "label": "Biomarker",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:EGFR",
+      "label": "EGFR",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:KRAS",
+      "label": "KRAS",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:ALK",
+      "label": "ALK",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:ALK signaling / RTK fusion pathways",
+      "label": "ALK signaling / RTK fusion pathways",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:BRAF",
+      "label": "BRAF",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:MET",
+      "label": "MET",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:TP53",
+      "label": "TP53",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:p53 tumor suppressor pathway / DNA damage response",
+      "label": "p53 tumor suppressor pathway / DNA damage response",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:STK11",
+      "label": "STK11",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:AMPK / LKB1 metabolic signaling",
+      "label": "AMPK / LKB1 metabolic signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:KEAP1",
+      "label": "KEAP1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:RB1",
+      "label": "RB1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Cell cycle control (RB pathway)",
+      "label": "Cell cycle control (RB pathway)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:SMARCA4",
+      "label": "SMARCA4",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Chromatin remodeling (SWI/SNF)",
+      "label": "Chromatin remodeling (SWI/SNF)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:CD274",
+      "label": "CD274",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Immune checkpoint (PD-L1/PD-1)",
+      "label": "Immune checkpoint (PD-L1/PD-1)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:ERBB2",
+      "label": "ERBB2",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:PIK3CA",
+      "label": "PIK3CA",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:CCND1",
+      "label": "CCND1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Cell cycle (Cyclin D1 / CDK4/6)",
+      "label": "Cell cycle (Cyclin D1 / CDK4/6)",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:MYC",
+      "label": "MYC",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:MYC transcriptional programs / proliferation",
+      "label": "MYC transcriptional programs / proliferation",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:FGFR1",
+      "label": "FGFR1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:BRCA1",
+      "label": "BRCA1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Homologous recombination / DNA repair",
+      "label": "Homologous recombination / DNA repair",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:BRCA2",
+      "label": "BRCA2",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "biomarker:PTEN",
+      "label": "PTEN",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "pathway:Negative regulator of PI3K-Akt signaling",
+      "label": "Negative regulator of PI3K-Akt signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {}
+    },
+    {
+      "id": "biomarker:CDH1",
+      "label": "CDH1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Gene/Protein (example)"
+      }
+    },
+    {
+      "id": "drug:Osimertinib",
+      "label": "Osimertinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "EGFR-TKI, third-gen, irreversible"
+      }
+    },
+    {
+      "id": "drug:Gefitinib",
+      "label": "Gefitinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "EGFR-TKI, first-gen"
+      }
+    },
+    {
+      "id": "drug:Erlotinib",
+      "label": "Erlotinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "EGFR-TKI, first-gen"
+      }
+    },
+    {
+      "id": "drug:Afatinib",
+      "label": "Afatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Irreversible EGFR/HER2 inhibitor"
+      }
+    },
+    {
+      "id": "gene:HER2",
+      "label": "HER2",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Crizotinib",
+      "label": "Crizotinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "ALK/ROS1 inhibitor"
+      }
+    },
+    {
+      "id": "gene:ROS1",
+      "label": "ROS1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Alectinib",
+      "label": "Alectinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Second-generation ALK inhibitor"
+      }
+    },
+    {
+      "id": "drug:Ceritinib",
+      "label": "Ceritinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "ALK inhibitor"
+      }
+    },
+    {
+      "id": "drug:Lorlatinib",
+      "label": "Lorlatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Third-generation ALK/ROS1 inhibitor"
+      }
+    },
+    {
+      "id": "drug:Sotorasib",
+      "label": "Sotorasib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "KRAS G12C inhibitor"
+      }
+    },
+    {
+      "id": "drug:Capmatinib",
+      "label": "Capmatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "MET exon14 skipping inhibitor"
+      }
+    },
+    {
+      "id": "drug:Selpercatinib",
+      "label": "Selpercatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "RET fusion inhibitor"
+      }
+    },
+    {
+      "id": "gene:RET",
+      "label": "RET",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Entrectinib",
+      "label": "Entrectinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "ROS1/NTRK inhibitor"
+      }
+    },
+    {
+      "id": "gene:NTRK",
+      "label": "NTRK",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Pembrolizumab",
+      "label": "Pembrolizumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PD-1/PD-L1 inhibitor"
+      }
+    },
+    {
+      "id": "drug:Nivolumab",
+      "label": "Nivolumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PD-1/PD-L1 inhibitor"
+      }
+    },
+    {
+      "id": "drug:Atezolizumab",
+      "label": "Atezolizumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PD-L1 inhibitor"
+      }
+    },
+    {
+      "id": "drug:Durvalumab",
+      "label": "Durvalumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PD-L1 inhibitor"
+      }
+    },
+    {
+      "id": "drug:Cisplatin",
+      "label": "Cisplatin",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "DNA crosslinking agent"
+      }
+    },
+    {
+      "id": "gene:DNA",
+      "label": "DNA",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Carboplatin",
+      "label": "Carboplatin",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "DNA crosslinking agent"
+      }
+    },
+    {
+      "id": "drug:Paclitaxel",
+      "label": "Paclitaxel",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Stabilizes microtubules, inhibits mitosis"
+      }
+    },
+    {
+      "id": "gene:Microtubules",
+      "label": "Microtubules",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Docetaxel",
+      "label": "Docetaxel",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Stabilizes microtubules, inhibits mitosis"
+      }
+    },
+    {
+      "id": "drug:Pemetrexed",
+      "label": "Pemetrexed",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Folate antimetabolite, inhibits nucleotide synthesis"
+      }
+    },
+    {
+      "id": "gene:Antifolate",
+      "label": "Antifolate",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Gemcitabine",
+      "label": "Gemcitabine",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Inhibits DNA synthesis"
+      }
+    },
+    {
+      "id": "gene:Nucleoside analog",
+      "label": "Nucleoside analog",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Etoposide",
+      "label": "Etoposide",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Inhibits topo II, causes DNA breaks"
+      }
+    },
+    {
+      "id": "gene:Topoisomerase",
+      "label": "Topoisomerase",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Trastuzumab",
+      "label": "Trastuzumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Monoclonal antibody against HER2"
+      }
+    },
+    {
+      "id": "drug:Pertuzumab",
+      "label": "Pertuzumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Blocks HER2 dimerization"
+      }
+    },
+    {
+      "id": "drug:Lapatinib",
+      "label": "Lapatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Dual TKI, inhibits EGFR and HER2"
+      }
+    },
+    {
+      "id": "drug:Tucatinib",
+      "label": "Tucatinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Selective HER2 TKI"
+      }
+    },
+    {
+      "id": "drug:Neratinib",
+      "label": "Neratinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Irreversible HER2/EGFR TKI"
+      }
+    },
+    {
+      "id": "drug:Tamoxifen",
+      "label": "Tamoxifen",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "ER antagonist"
+      }
+    },
+    {
+      "id": "gene:ER",
+      "label": "ER",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {}
+    },
+    {
+      "id": "drug:Letrozole",
+      "label": "Letrozole",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Inhibits estrogen synthesis"
+      }
+    },
+    {
+      "id": "drug:Anastrozole",
+      "label": "Anastrozole",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Inhibits estrogen synthesis"
+      }
+    },
+    {
+      "id": "drug:Exemestane",
+      "label": "Exemestane",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Inhibits estrogen synthesis"
+      }
+    },
+    {
+      "id": "drug:Fulvestrant",
+      "label": "Fulvestrant",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Degrades estrogen receptor"
+      }
+    },
+    {
+      "id": "drug:Olaparib",
+      "label": "Olaparib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Synthetic lethality for BRCA-mutated cancer"
+      }
+    },
+    {
+      "id": "drug:Talazoparib",
+      "label": "Talazoparib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PARP inhibitor for BRCA-mutated cancer"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:MAPK family signaling cascades",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Signaling by EGFR",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Signaling by EGFR",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Transcriptional Regulation by TP53",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Transcriptional Regulation by TP53",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Apoptosis",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Apoptosis",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:EGFR",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:EGFR / PI3K-Akt signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:EGFR / PI3K-Akt signaling",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:KRAS",
+      "target": "pathway:RAS/MAPK signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:RAS/MAPK signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:RAS/MAPK signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:ALK",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:ALK signaling / RTK fusions",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRAF",
+      "target": "pathway:MAPK/ERK signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:MAPK/ERK signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:MAPK/ERK signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:MET",
+      "target": "pathway:HGF/MET signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:HGF/MET signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:HGF/MET signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:ERBB2",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:ERBB2 / PI3K-Akt signaling",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:PIK3CA",
+      "target": "pathway:PI3K-Akt signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K-Akt signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K-Akt signaling",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:FGFR1",
+      "target": "pathway:FGFR signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:FGFR signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:FGFR signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:FGFR signaling",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:CCND1",
+      "target": "pathway:Cell cycle regulation (Cyclin D1/CDK4/6)",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:Cell cycle regulation (Cyclin D1/CDK4/6)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Cell cycle regulation (Cyclin D1/CDK4/6)",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:MYC",
+      "target": "pathway:MYC transcriptional network",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Oncogene",
+      "target": "pathway:MYC transcriptional network",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:MYC transcriptional network",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:MYC transcriptional network",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:RB1",
+      "target": "pathway:RB pathway / E2F regulation",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:RB pathway / E2F regulation",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:RB pathway / E2F regulation",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:TP53",
+      "target": "pathway:p53 signaling pathway",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:p53 signaling pathway",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:p53 signaling pathway",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:p53 signaling pathway",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRCA1",
+      "target": "pathway:Homologous recombination repair",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:Homologous recombination repair",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Homologous recombination repair",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRCA2",
+      "target": "pathway:Homologous recombination repair",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "gene:PTEN",
+      "target": "pathway:PI3K/AKT pathway inhibition",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:PI3K/AKT pathway inhibition",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT pathway inhibition",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:STK11",
+      "target": "pathway:AMPK / LKB1 signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:AMPK / LKB1 signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:AMPK / LKB1 signaling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:KEAP1",
+      "target": "pathway:NRF2 oxidative stress response",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:NRF2 oxidative stress response",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:NRF2 oxidative stress response",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:SMARCA4",
+      "target": "pathway:SWI/SNF chromatin remodeling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:SWI/SNF chromatin remodeling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:SWI/SNF chromatin remodeling",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:CDH1",
+      "target": "pathway:Cell adhesion (E-cadherin)",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Tumor suppressor",
+      "target": "pathway:Cell adhesion (E-cadherin)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Cell adhesion (E-cadherin)",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:CD274",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:Biomarker",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PD-1/PD-L1 immune checkpoint",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PD-1/PD-L1 immune checkpoint",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:EGFR",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:EGFR",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:KRAS",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:KRAS",
+      "target": "pathway:RAS/MAPK signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:ALK",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:ALK",
+      "target": "pathway:ALK signaling / RTK fusion pathways",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRAF",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRAF",
+      "target": "pathway:RAS/MAPK signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:MET",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:MET",
+      "target": "pathway:HGF/MET signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:TP53",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:TP53",
+      "target": "pathway:p53 tumor suppressor pathway / DNA damage response",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:STK11",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:STK11",
+      "target": "pathway:AMPK / LKB1 metabolic signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:KEAP1",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:KEAP1",
+      "target": "pathway:NRF2 oxidative stress response",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:RB1",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:RB1",
+      "target": "pathway:Cell cycle control (RB pathway)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:SMARCA4",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:SMARCA4",
+      "target": "pathway:Chromatin remodeling (SWI/SNF)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CD274",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CD274",
+      "target": "pathway:Immune checkpoint (PD-L1/PD-1)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:ERBB2",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:ERBB2",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PIK3CA",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PIK3CA",
+      "target": "pathway:PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CCND1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CCND1",
+      "target": "pathway:Cell cycle (Cyclin D1 / CDK4/6)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:MYC",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:MYC",
+      "target": "pathway:MYC transcriptional programs / proliferation",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:FGFR1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:FGFR1",
+      "target": "pathway:FGFR signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRCA1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRCA1",
+      "target": "pathway:Homologous recombination / DNA repair",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRCA2",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRCA2",
+      "target": "pathway:Homologous recombination / DNA repair",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PTEN",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PTEN",
+      "target": "pathway:Negative regulator of PI3K-Akt signaling",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CDH1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CDH1",
+      "target": "pathway:Cell adhesion (E-cadherin)",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:TP53",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CD274",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:EGFR",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:KRAS",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:ALK",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRAF",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:MET",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:TP53",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:STK11",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:KEAP1",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:RB1",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:SMARCA4",
+      "target": "disease:Lung Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:ERBB2",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:PIK3CA",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:CCND1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:MYC",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:FGFR1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRCA1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRCA2",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:PTEN",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:CDH1",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:TP53",
+      "target": "disease:Breast Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "drug:Osimertinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Osimertinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Osimertinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gefitinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gefitinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gefitinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Erlotinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Erlotinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Erlotinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Afatinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Afatinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Afatinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Afatinib",
+      "target": "gene:HER2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Crizotinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Crizotinib",
+      "target": "gene:ALK",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Crizotinib",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Crizotinib",
+      "target": "gene:ROS1",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Alectinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Alectinib",
+      "target": "gene:ALK",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Alectinib",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Ceritinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Ceritinib",
+      "target": "gene:ALK",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Ceritinib",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lorlatinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lorlatinib",
+      "target": "gene:ALK",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lorlatinib",
+      "target": "pathway:ALK signaling / RTK fusions",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lorlatinib",
+      "target": "gene:ROS1",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Sotorasib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Sotorasib",
+      "target": "gene:KRAS",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Sotorasib",
+      "target": "pathway:RAS/MAPK signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Capmatinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Capmatinib",
+      "target": "gene:MET",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Capmatinib",
+      "target": "pathway:HGF/MET signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Selpercatinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Selpercatinib",
+      "target": "gene:RET",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Entrectinib",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Entrectinib",
+      "target": "gene:ROS1",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Entrectinib",
+      "target": "gene:NTRK",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pembrolizumab",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pembrolizumab",
+      "target": "gene:CD274",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pembrolizumab",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Nivolumab",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Nivolumab",
+      "target": "gene:CD274",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Nivolumab",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Atezolizumab",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Atezolizumab",
+      "target": "gene:CD274",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Atezolizumab",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Durvalumab",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Durvalumab",
+      "target": "gene:CD274",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Durvalumab",
+      "target": "pathway:PD-1/PD-L1 immune checkpoint",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Cisplatin",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Cisplatin",
+      "target": "gene:DNA",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Carboplatin",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Carboplatin",
+      "target": "gene:DNA",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Paclitaxel",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Paclitaxel",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Paclitaxel",
+      "target": "gene:Microtubules",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Docetaxel",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Docetaxel",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Docetaxel",
+      "target": "gene:Microtubules",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pemetrexed",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pemetrexed",
+      "target": "gene:Antifolate",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gemcitabine",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gemcitabine",
+      "target": "gene:Nucleoside analog",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Etoposide",
+      "target": "disease:Lung Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Etoposide",
+      "target": "gene:Topoisomerase",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Trastuzumab",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Trastuzumab",
+      "target": "gene:ERBB2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Trastuzumab",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pertuzumab",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pertuzumab",
+      "target": "gene:ERBB2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Pertuzumab",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lapatinib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lapatinib",
+      "target": "gene:ERBB2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lapatinib",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lapatinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Lapatinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Tucatinib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Tucatinib",
+      "target": "gene:ERBB2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Tucatinib",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Neratinib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Neratinib",
+      "target": "gene:ERBB2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Neratinib",
+      "target": "pathway:ERBB2 / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Neratinib",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Neratinib",
+      "target": "pathway:EGFR / PI3K-Akt signaling",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Tamoxifen",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Tamoxifen",
+      "target": "gene:ER",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Letrozole",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Letrozole",
+      "target": "gene:ER",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Anastrozole",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Anastrozole",
+      "target": "gene:ER",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Exemestane",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Exemestane",
+      "target": "gene:ER",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Fulvestrant",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Fulvestrant",
+      "target": "gene:ER",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Olaparib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Olaparib",
+      "target": "gene:BRCA1",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Olaparib",
+      "target": "pathway:Homologous recombination repair",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Olaparib",
+      "target": "gene:BRCA2",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Talazoparib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Talazoparib",
+      "target": "gene:BRCA1",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Talazoparib",
+      "target": "pathway:Homologous recombination repair",
+      "relation": "targets",
+      "properties": {}
+    },
+    {
+      "source": "drug:Talazoparib",
+      "target": "gene:BRCA2",
+      "relation": "targets_gene",
+      "properties": {}
+    }
+  ]
+}

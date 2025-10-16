@@ -1,0 +1,100 @@
+﻿Overview
+The graph models mechanistic interactions among genes, pathways, biomarkers, drugs, and diseases. Each node category is color-coded and connected through explicit semantic relations such as participates in, targets, associated with, and indicates [1].
+________________
+
+
+Core Entity Types
+Entity Type
+	Example Nodes
+	Description
+	Color
+	Disease
+	Lung Cancer, Breast Cancer
+	Primary disease contexts linking molecular and pharmacological entities
+	9b5de5
+	Gene
+	EGFR, KRAS, TP53, BRCA1
+	Encodes proteins central to cancer signaling, suppression, or DNA repair
+	e63946
+	Pathway
+	PI3K-AKT, MAPK, p53 signaling
+	Represents functional networks connecting genes to disease mechanisms
+	2a9d8f
+	Biomarker
+	Oncogene, Tumor suppressor, EGFR, BRCA1
+	Defines diagnostic or predictive molecular indicators
+	4361ee
+	Drug
+	Osimertinib, Trastuzumab, Tamoxifen
+	Therapeutic agents mapped by molecular target and indicated disease
+	f4a261
+	________________
+
+
+Relationship Types
+Relation
+	Source → Target
+	Example
+	Participates in
+	           gene → pathway
+	EGFR → EGFR PI3K-Akt signaling
+	Associated with
+	        pathway → disease
+	MAPK cascades → Lung Cancer
+	Targets gene
+	             drug → gene
+	Osimertinib → EGFR
+	targets
+	drug → pathway
+	Lapatinib → ERBB2 PI3K-Akt signaling
+	Indicated for
+	drug → disease
+	Trastuzumab → Breast Cancer
+	indicates
+	biomarker → pathway or disease
+	Oncogene → RAS-MAPK pathway
+	________________
+
+
+Disease-Specific Contexts
+Lung Cancer axis:
+* Dominant oncogenes: EGFR, KRAS, ALK, BRAF, MET. [1]
+
+* Tumor suppressors: TP53, STK11, KEAP1, RB1, SMARCA4. [1]
+
+* Drug classes: EGFR-TKIs (Osimertinib, Gefitinib), ALK inhibitors (Crizotinib, Lorlatinib), checkpoint inhibitors (Pembrolizumab). [1]
+
+* Key pathways: PI3K-AKT, RAS-MAPK, p53, PD-1/PD-L1. [1]
+
+Breast Cancer axis:
+   * Key genes: ERBB2, PIK3CA, BRCA1, BRCA2, ESR1, PTEN, CCND1. [1]
+
+   * Drugs: Trastuzumab, Lapatinib, Tamoxifen, Olaparib. [1]
+
+   * Pathways: ERBB2 PI3K-AKT, Homologous recombination repair, Cell cycle Cyclin D1–CDK4/6. [1]
+
+________________
+
+
+Analytical Applications
+      * Pathway enrichment: Track gene nodes participating in multiple oncogenic pathways. 
+
+      * Therapeutic mapping: Identify drug–target–disease triplets for drug repurposing. 
+
+      * Biomarker validation: Assess biomarkers associated with both lung and breast dysregulation. 
+
+      * Fusion cluster tracing: Connect ALK, ROS1, and RET genes to drug-sensitive fusions. 
+
+________________
+
+
+Interpretation Framework
+         1. Begin with a disease node. 
+
+         2. Traverse associated with edges to extract active pathways. 
+
+         3. From pathways, expand to participates in to find linked genes. 
+
+         4. Map biomarkers and drugs associated via indicates and targets gene. 
+
+         5. Use color codes for differentiation during visualization.
