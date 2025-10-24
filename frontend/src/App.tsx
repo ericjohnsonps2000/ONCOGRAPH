@@ -208,36 +208,36 @@ ${knowledgeContext}`
     <div className="flex flex-col h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
       {/* Header */}
       <div className="bg-black/80 border-b border-cyan-500/30 px-4 py-3 shadow-lg backdrop-blur-sm">
-        <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">OncoGraph Knowledge Assistant</h1>
-        <p className="text-sm text-cyan-300/80 font-mono">Ask questions about cancer biology, pathways, drugs, and biomarkers</p>
+        <h1 className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">OncoGraph Knowledge Assistant</h1>
+        <p className="text-xs sm:text-sm text-cyan-300/80 font-mono">Ask questions about cancer biology, pathways, drugs, and biomarkers</p>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto px-4 py-6">
+      <div className="flex-1 overflow-y-auto px-2 sm:px-4 py-4 sm:py-6">
         <div className="max-w-3xl mx-auto space-y-4">
           {messages.length === 0 && (
-            <div className="text-center text-cyan-400 mt-20">
-              <div className="text-6xl mb-6 dna-glow">🧬</div>
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-4">Welcome to OncoGraph Knowledge Assistant!</h2>
-              <div className="bg-black/40 border border-cyan-500/30 rounded-lg p-6 mx-auto max-w-2xl backdrop-blur-sm">
+            <div className="text-center text-cyan-400 mt-8 sm:mt-20">
+              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6 dna-glow">🧬</div>
+              <h2 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-4">Welcome to OncoGraph Knowledge Assistant!</h2>
+              <div className="bg-black/40 border border-cyan-500/30 rounded-lg p-4 sm:p-6 mx-auto max-w-2xl backdrop-blur-sm">
                 <p className="text-cyan-300 font-mono mb-4">Ask questions about cancer biology, genes, pathways, drugs, and biomarkers.</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
                   <button 
-                    className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded px-3 py-2 hover:from-cyan-500/20 hover:to-blue-500/20 hover:border-cyan-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                    className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg px-4 py-3 hover:from-cyan-500/20 hover:to-blue-500/20 hover:border-cyan-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400/50 active:scale-95 touch-manipulation"
                     onClick={() => handleSendMessage("What is EGFR?")}
                     aria-label="Ask about EGFR"
                   >
                     <span className="text-cyan-400">"What is EGFR?"</span>
                   </button>
                   <button 
-                    className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded px-3 py-2 hover:from-purple-500/20 hover:to-pink-500/20 hover:border-purple-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+                    className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg px-4 py-3 hover:from-purple-500/20 hover:to-pink-500/20 hover:border-purple-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400/50 active:scale-95 touch-manipulation"
                     onClick={() => handleSendMessage("Tell me about PI3K pathway")}
                     aria-label="Ask about PI3K pathway"
                   >
                     <span className="text-purple-400">"Tell me about PI3K pathway"</span>
                   </button>
                   <button 
-                    className="bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/20 rounded px-3 py-2 hover:from-pink-500/20 hover:to-red-500/20 hover:border-pink-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-400/50"
+                    className="bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/20 rounded-lg px-4 py-3 hover:from-pink-500/20 hover:to-red-500/20 hover:border-pink-400/40 transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-400/50 active:scale-95 touch-manipulation sm:col-span-2 lg:col-span-1"
                     onClick={() => handleSendMessage("Drugs for lung cancer")}
                     aria-label="Ask about drugs for lung cancer"
                   >

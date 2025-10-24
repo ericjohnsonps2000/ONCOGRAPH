@@ -377,31 +377,31 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
   return (
     <div className={`bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-2xl border border-cyan-500/20 ${isFullscreen ? 'fixed inset-4 z-50' : ''}`}>
       {/* Header with controls */}
-      <div className="flex justify-between items-center p-4 border-b border-cyan-500/30 bg-black/40">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 sm:p-4 border-b border-cyan-500/30 bg-black/40 gap-3 sm:gap-0">
         <div>
-          <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Knowledge Graph Visualization</h3>
-          <p className="text-sm text-cyan-300 font-mono">
+          <h3 className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Knowledge Graph Visualization</h3>
+          <p className="text-xs sm:text-sm text-cyan-300 font-mono">
             {data.nodes.length} entities, {data.edges.length} relationships
           </p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => downloadGraph('json')}
-            className="px-3 py-1 text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded border border-cyan-400/30 hover:from-blue-400 hover:to-cyan-400 transition-all duration-200 shadow-lg shadow-blue-500/20 font-mono"
+            className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded border border-cyan-400/30 hover:from-blue-400 hover:to-cyan-400 transition-all duration-200 shadow-lg shadow-blue-500/20 font-mono touch-manipulation active:scale-95"
             title="Download as JSON"
           >
             📄 JSON
           </button>
           <button
             onClick={() => downloadGraph('png')}
-            className="px-3 py-1 text-sm bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded border border-green-400/30 hover:from-green-400 hover:to-emerald-400 transition-all duration-200 shadow-lg shadow-green-500/20 font-mono"
+            className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded border border-green-400/30 hover:from-green-400 hover:to-emerald-400 transition-all duration-200 shadow-lg shadow-green-500/20 font-mono touch-manipulation active:scale-95"
             title="Download as PNG"
           >
             🖼️ PNG
           </button>
           <button
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="px-3 py-1 text-sm bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded border border-purple-400/30 hover:from-purple-400 hover:to-pink-400 transition-all duration-200 shadow-lg shadow-purple-500/20 font-mono"
+            className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded border border-purple-400/30 hover:from-purple-400 hover:to-pink-400 transition-all duration-200 shadow-lg shadow-purple-500/20 font-mono touch-manipulation active:scale-95"
             title={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
           >
             {isFullscreen ? '⤓' : '⤢'}
@@ -409,7 +409,7 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
           {isFullscreen && (
             <button
               onClick={() => setIsFullscreen(false)}
-              className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+              className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-red-500 text-white rounded hover:bg-red-600 transition-colors touch-manipulation active:scale-95"
             >
               ✕
             </button>
@@ -422,8 +422,8 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
         <svg ref={svgRef} className="w-full"></svg>
         
         {/* Legend - Dynamic based on present entity types */}
-        <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm border border-cyan-500/30 p-3 rounded-lg shadow-lg shadow-cyan-500/20">
-          <h4 className="text-sm font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Entity Types</h4>
+        <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/80 backdrop-blur-sm border border-cyan-500/30 p-2 sm:p-3 rounded-lg shadow-lg shadow-cyan-500/20 max-w-[160px] sm:max-w-none">
+          <h4 className="text-xs sm:text-sm font-bold mb-1 sm:mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Entity Types</h4>
           <div className="space-y-1 text-xs font-mono">
             {getActiveEntityTypes().map(entityType => (
               <div key={entityType.type} className="flex items-center space-x-2">
@@ -443,17 +443,17 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
 
         {/* Node details panel */}
         {selectedNode && (
-          <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-sm border border-purple-500/30 p-4 rounded-lg shadow-lg shadow-purple-500/20 max-w-xs">
+          <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/90 backdrop-blur-sm border border-purple-500/30 p-3 sm:p-4 rounded-lg shadow-lg shadow-purple-500/20 max-w-[280px] sm:max-w-xs">
             <div className="flex justify-between items-start mb-2">
-              <h4 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">{selectedNode.label}</h4>
+              <h4 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-sm sm:text-base">{selectedNode.label}</h4>
               <button
                 onClick={() => setSelectedNode(null)}
-                className="text-purple-400 hover:text-cyan-400 text-lg leading-none transition-colors duration-200"
+                className="text-purple-400 hover:text-cyan-400 text-lg leading-none transition-colors duration-200 touch-manipulation ml-2"
               >
                 ×
               </button>
             </div>
-            <div className="text-sm text-cyan-100 space-y-1 font-mono">
+            <div className="text-xs sm:text-sm text-cyan-100 space-y-1 font-mono">
               <p><strong className="text-purple-400">Type:</strong> <span className="text-cyan-300">{selectedNode.type}</span></p>
               <p><strong className="text-purple-400">ID:</strong> <span className="text-cyan-300 text-xs">{selectedNode.id}</span></p>
               {selectedNode.properties?.description && (
@@ -468,12 +468,12 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       </div>
 
       {/* Instructions */}
-      <div className="p-3 bg-black/60 border-t border-cyan-500/30 text-xs text-cyan-300 font-mono backdrop-blur-sm">
-        <div className="flex flex-wrap gap-4">
-          <span>💡 <strong className="text-cyan-400">Tip:</strong> Drag nodes to rearrange</span>
-          <span>🔍 <strong className="text-purple-400">Zoom:</strong> Mouse wheel or +/- buttons</span>
-          <span>👆 <strong className="text-pink-400">Click:</strong> Select node for details</span>
-          <span>🏷️ <strong className="text-green-400">Hover:</strong> View node tooltip</span>
+      <div className="p-2 sm:p-3 bg-black/60 border-t border-cyan-500/30 text-xs text-cyan-300 font-mono backdrop-blur-sm">
+        <div className="flex flex-wrap gap-2 sm:gap-4">
+          <span className="whitespace-nowrap">💡 <strong className="text-cyan-400">Tip:</strong> Drag nodes to rearrange</span>
+          <span className="whitespace-nowrap">🔍 <strong className="text-purple-400">Zoom:</strong> Pinch or +/- buttons</span>
+          <span className="whitespace-nowrap">👆 <strong className="text-pink-400">Tap:</strong> Select node for details</span>
+          <span className="whitespace-nowrap">🏷️ <strong className="text-green-400">Hold:</strong> View node tooltip</span>
         </div>
       </div>
     </div>
