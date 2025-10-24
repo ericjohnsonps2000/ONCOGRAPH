@@ -2,6 +2,8 @@
 
 A sophisticated biomedical AI assistant powered by an enhanced oncology knowledge graph, featuring interactive visualizations and comprehensive cancer biology insights.
 
+**🌐 Live Demo**: https://ericjohnsonps2000.github.io/ONCOGRAPH/
+
 ![OncoGraph Demo](https://img.shields.io/badge/Status-Production_Ready-brightgreen)
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
