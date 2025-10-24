@@ -1,13 +1,30 @@
 {
   "name": "oncograph-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "OncoGraph Knowledge Assistant - AI-powered biomedical assistant with interactive cancer biology visualizations",
+  "author": "ericjohnsonps2000",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
+    "dev-local": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview --host 0.0.0.0",
+    "preview-local": "vite preview",
+    "check-env": "node -e \"console.log('Node.js version:', process.version); console.log('npm version:', process.env.npm_version || 'Unknown'); console.log('Platform:', process.platform);\"",
+    "setup-check": "node setup-check.js",
+    "test": "node test.js",
+    "setup": "npm install && npm run setup-check",
+    "clean": "rm -rf node_modules package-lock.json .vite dist",
+    "clean-win": "rmdir /s node_modules & del package-lock.json & rmdir /s .vite & rmdir /s dist",
+    "reinstall": "npm run clean && npm install",
+    "reinstall-win": "npm run clean-win && npm install"
   },
   "dependencies": {
     "d3": "^7.9.0",

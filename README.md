@@ -38,39 +38,84 @@ A sophisticated biomedical AI assistant powered by an enhanced oncology knowledg
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Node.js** (v16 or higher)
-- **npm** or **yarn**
+- **Node.js** (v16.0.0 or higher)
+- **npm** (v8.0.0 or higher)
 - **OpenAI API Key** (GPT-4o-mini access)
+- **Modern Browser** (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
 
-### Installation
+### Cross-Platform Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ericjohnsonps2000/oncograph.git
-   cd oncograph
+   git clone https://github.com/ericjohnsonps2000/ONCOGRAPH.git
+   cd ONCOGRAPH
    ```
 
-2. **Install frontend dependencies**
+2. **Navigate to frontend directory**
    ```bash
    cd frontend
+   ```
+
+3. **Run cross-platform setup check**
+   ```bash
+   npm run setup-check
+   ```
+   This will verify your system compatibility and create necessary files.
+
+4. **Install dependencies**
+   ```bash
    npm install
    ```
 
-3. **Set up environment variables**
+5. **Configure environment**
    ```bash
-   # Create .env file in frontend directory
-   echo "VITE_OPENAI_API_KEY=your_openai_api_key_here" > .env
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env and add your OpenAI API key
+   VITE_OPENAI_API_KEY=your_actual_api_key_here
    ```
 
-4. **Start the development server**
+6. **Test the setup**
+   ```bash
+   npm run test
+   ```
+
+7. **Start the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open in browser**
-   ```
-   http://localhost:5173
-   ```
+8. **Open in browser**
+   - Local: `http://localhost:3000`
+   - Network: `http://your-ip:3000` (for mobile testing)
+
+### Platform-Specific Instructions
+
+**Windows Users:**
+```powershell
+# Use PowerShell (recommended) or Command Prompt
+npm run setup-check
+npm install
+npm run dev
+```
+
+**macOS/Linux Users:**
+```bash
+# Standard Unix commands
+npm run setup-check
+npm install
+npm run dev
+```
+
+### Troubleshooting
+If you encounter issues, run:
+```bash
+npm run setup-check  # Comprehensive system check
+npm run test         # Verify app components
+```
+
+For detailed troubleshooting, see [SETUP.md](SETUP.md).
 
 ## 🔧 Configuration
 

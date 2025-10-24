@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  oncograph-dev:
+    build:
+      context: .
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}
+    command: npm run dev
+    networks:
+      - oncograph-network
+
+  oncograph-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
+    environment:
+      - VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}
+    networks:
+      - oncograph-network
+
+networks:
+  oncograph-network:
+    driver: bridge
+
+# Usage:
+# Development: docker-compose up oncograph-dev
+# Production: docker-compose up oncograph-prod

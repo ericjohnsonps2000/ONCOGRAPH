@@ -16,18 +16,32 @@ export interface Message {
   }
 }
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-})
+// Initialize OpenAI client with error handling
+let openai: OpenAI | null = null;
 
-// Debug function to check API key
+try {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  if (apiKey && apiKey !== 'your_openai_api_key_here') {
+    openai = new OpenAI({
+      apiKey: apiKey,
+      dangerouslyAllowBrowser: true
+    });
+  }
+} catch (error) {
+  console.error('Failed to initialize OpenAI client:', error);
+}
+
+// Enhanced debug function with system info
 const debugApiKey = () => {
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY
-  console.log('API Key exists:', !!apiKey)
-  console.log('API Key length:', apiKey?.length || 0)
-  console.log('API Key starts with sk-:', apiKey?.startsWith('sk-') || false)
+  console.log('🔍 Environment Debug Info:')
+  console.log('- Platform:', navigator.platform)
+  console.log('- User Agent:', navigator.userAgent.substring(0, 50) + '...')
+  console.log('- API Key exists:', !!apiKey)
+  console.log('- API Key length:', apiKey?.length || 0)
+  console.log('- API Key format valid:', apiKey?.startsWith('sk-') || false)
+  console.log('- API Key is placeholder:', apiKey === 'your_openai_api_key_here')
+  console.log('- OpenAI client initialized:', !!openai)
 }
 
 function App() {
@@ -37,12 +51,7 @@ function App() {
   
   // Debug API key on component mount
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_OPENAI_API_KEY
-    console.log('🔑 API Key Debug Info:')
-    console.log('- Exists:', !!apiKey)
-    console.log('- Length:', apiKey?.length || 0)
-    console.log('- Format valid:', apiKey?.startsWith('sk-') || false)
-    console.log('- First 10 chars:', apiKey?.substring(0, 10) || 'None')
+    debugApiKey()
   }, [])
 
   const scrollToBottom = () => {
@@ -67,12 +76,16 @@ function App() {
     try {
       // Check API key first
       const apiKey = import.meta.env.VITE_OPENAI_API_KEY
-      if (!apiKey) {
-        throw new Error('OpenAI API key is not configured. Please check your .env file.')
+      if (!apiKey || apiKey === 'your_openai_api_key_here') {
+        throw new Error('OpenAI API key is not configured. Please check your .env file and set VITE_OPENAI_API_KEY.')
       }
       
       if (!apiKey.startsWith('sk-')) {
         throw new Error('Invalid OpenAI API key format. The key should start with "sk-".')
+      }
+
+      if (!openai) {
+        throw new Error('OpenAI client is not initialized. Please check your API key configuration.')
       }
 
       // Query the knowledge graph for relevant information
