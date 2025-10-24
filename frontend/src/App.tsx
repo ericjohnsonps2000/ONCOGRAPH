@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
-import KnowledgeGraphVisualization from './components/KnowledgeGraphVisualization'
 import OpenAI from 'openai'
 import { knowledgeGraphService } from './services/knowledgeGraphService'
 

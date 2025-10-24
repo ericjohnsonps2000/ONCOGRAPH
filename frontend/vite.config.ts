@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     host: true
   },
-  base: process.env.NODE_ENV === 'production' ? '/ONCOGRAPH/' : '/',
+  base: process.env.VERCEL ? '/' : (process.env.NODE_ENV === 'production' ? '/ONCOGRAPH/' : '/'),
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
