@@ -193,22 +193,34 @@ ${knowledgeContext}`
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <div className="flex flex-col h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3 shadow-sm">
-        <h1 className="text-xl font-semibold text-gray-800">OncoGraph Knowledge Assistant</h1>
-        <p className="text-sm text-gray-600">Ask questions about cancer biology, pathways, drugs, and biomarkers</p>
+      <div className="bg-black/80 border-b border-cyan-500/30 px-4 py-3 shadow-lg backdrop-blur-sm">
+        <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">OncoGraph Knowledge Assistant</h1>
+        <p className="text-sm text-cyan-300/80 font-mono">Ask questions about cancer biology, pathways, drugs, and biomarkers</p>
       </div>
 
       {/* Messages Container */}
       <div className="flex-1 overflow-y-auto px-4 py-6">
         <div className="max-w-3xl mx-auto space-y-4">
           {messages.length === 0 && (
-            <div className="text-center text-gray-500 mt-20">
-              <div className="text-4xl mb-4">🧬</div>
-              <p className="text-lg">Welcome to OncoGraph Knowledge Assistant!</p>
-              <p className="text-sm">Ask questions about cancer biology, genes, pathways, drugs, and biomarkers.</p>
-              <p className="text-xs mt-2 text-gray-400">Examples: "What is EGFR?" • "Tell me about PI3K pathway" • "Drugs for lung cancer"</p>
+            <div className="text-center text-cyan-400 mt-20">
+              <div className="text-6xl mb-6 animate-bounce">🧬</div>
+              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-4">Welcome to OncoGraph Knowledge Assistant!</h2>
+              <div className="bg-black/40 border border-cyan-500/30 rounded-lg p-6 mx-auto max-w-2xl backdrop-blur-sm">
+                <p className="text-cyan-300 font-mono mb-4">Ask questions about cancer biology, genes, pathways, drugs, and biomarkers.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+                  <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded px-3 py-2">
+                    <span className="text-cyan-400">"What is EGFR?"</span>
+                  </div>
+                  <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded px-3 py-2">
+                    <span className="text-purple-400">"Tell me about PI3K pathway"</span>
+                  </div>
+                  <div className="bg-gradient-to-r from-pink-500/10 to-red-500/10 border border-pink-500/20 rounded px-3 py-2">
+                    <span className="text-pink-400">"Drugs for lung cancer"</span>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
           
@@ -218,11 +230,11 @@ ${knowledgeContext}`
           
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-white rounded-2xl px-4 py-3 shadow-sm border border-gray-200 max-w-xs">
+              <div className="bg-gray-900/80 border border-cyan-500/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm max-w-xs">
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce shadow-lg shadow-cyan-400/50"></div>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce shadow-lg shadow-purple-400/50" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-2 h-2 bg-pink-400 rounded-full animate-bounce shadow-lg shadow-pink-400/50" style={{ animationDelay: '0.2s' }}></div>
                 </div>
               </div>
             </div>
@@ -233,7 +245,7 @@ ${knowledgeContext}`
       </div>
 
       {/* Chat Input */}
-      <div className="bg-white border-t border-gray-200 px-4 py-4">
+      <div className="bg-black/80 border-t border-cyan-500/30 px-4 py-4 shadow-lg backdrop-blur-sm">
         <div className="max-w-3xl mx-auto">
           <ChatInput onSendMessage={handleSendMessage} disabled={isTyping} />
         </div>

@@ -1,30 +1,39 @@
-# OncoGraph Knowledge Assistant 🧬
+# 🧬 OncoGraph Knowledge Assistant
 
-A sophisticated biomedical AI assistant that combines OpenAI's GPT-4o-mini with an interactive knowledge graph visualization for oncology research and education.
+A sophisticated biomedical AI assistant powered by an enhanced oncology knowledge graph, featuring interactive visualizations and comprehensive cancer biology insights.
 
-![OncoGraph Demo](https://img.shields.io/badge/Status-Production_Ready-green)
+![OncoGraph Demo](https://img.shields.io/badge/Status-Production_Ready-brightgreen)
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Vite](https://img.shields.io/badge/Vite-4.4.5-purple)
 ![D3.js](https://img.shields.io/badge/D3.js-7.9.0-orange)
 
-## ✨ Features
+## 🌟 Features
 
 ### 🤖 **AI-Powered Chat Interface**
-- **GPT-4o-mini Integration**: Advanced conversational AI for biomedical queries
-- **Structured Responses**: Point-wise, organized answers with clear headings
-- **Context-Aware**: Utilizes knowledge graph data for accurate responses
+- **GPT-4o-mini Integration**: Sophisticated natural language understanding for cancer biology queries
+- **Structured Responses**: Point-wise, organized answers with proper formatting and bold text rendering
+- **Futuristic Dark UI**: Cyberpunk-inspired design with neon accents and glass morphism effects
+- **Context-Aware Intelligence**: Leverages enhanced knowledge graph for scientifically accurate responses
 
 ### 📊 **Interactive Knowledge Graph Visualization**
-- **D3.js-Powered**: Smooth, interactive force-directed graph layouts
-- **Entity Types**: Genes, Drugs, Pathways, Biomarkers, Diseases
-- **Smart Filtering**: Shows only relevant entities based on user queries
-- **Export Functionality**: Download visualizations as PNG images
+- **D3.js-Powered Graphs**: Dynamic, interactive network visualizations with smooth animations
+- **Entity-Relationship Mapping**: Visual connections between genes, drugs, pathways, biomarkers, and diseases
+- **Color-Coded Entities**: Intuitive visual distinction with neon styling
+- **Real-time Filtering**: Context-aware graph generation based on user queries
+- **Export Functionality**: Download visualizations as high-quality PNG images
 
-### 🎯 **Intelligent Query Processing**
-- **Intent Recognition**: Understands specific gene requests vs. general queries
-- **Single Entity Focus**: When asking for "one gene", shows exactly one result
-- **Disease Context**: Automatically finds relevant genes for cancer types
-- **Relationship Mapping**: Displays connections between biological entities
+### 🧬 **Comprehensive Oncology Database v2.0**
+- **Enhanced Knowledge Graph**: Scientifically curated data from TCGA, OncoKB, DrugBank, ClinVar, KEGG, Reactome
+- **Molecular Mechanisms**: Detailed protein structures, mutation hotspots, and pathway interactions
+- **Clinical Intelligence**: Drug mechanisms, resistance patterns, biomarker significance, and FDA approval data
+- **Multi-Cancer Coverage**: Lung, breast, colorectal, pancreatic, prostate, melanoma, ovarian cancers with detailed epidemiology
+
+### 🎯 **Precision Medicine Focus**
+- **Mutation-Specific Insights**: Detailed information on hotspot mutations (EGFR L858R, KRAS G12C, etc.)
+- **Therapeutic Targeting**: Drug-gene interactions, resistance mechanisms, and combination strategies
+- **Biomarker Interpretation**: Clinical assessment methods, cutoff values, and predictive significance
+- **Pathway Analysis**: Molecular network analysis with regulatory mechanisms and therapeutic implications
 
 ## 🚀 Quick Start
 
@@ -79,28 +88,31 @@ The project includes a curated oncology knowledge graph with:
 - **2,000+ relationships** 
 - **Cancer-focused** genes, pathways, and drugs
 
-## 📋 Usage Examples
+## � Usage Examples
 
-### 🧬 **Gene Queries**
-```
-"What is EGFR?"
-"One gene related to breast cancer"
-"FGFR1 and MYC associated drugs"
-```
+### Basic Queries
+- "What is EGFR and its role in lung cancer?"
+- "Show me drugs for breast cancer treatment"
+- "Explain the PI3K pathway in cancer"
+- "Drugs related to colorectal cancer"
 
-### 💊 **Drug Information**
-```
-"Drugs targeting EGFR"
-"Tell me about Trastuzumab"
-"Treatments for lung cancer"
-```
+### Advanced Molecular Queries
+- "What are the specific EGFR mutations and their drug sensitivities?"
+- "How does trastuzumab resistance develop in HER2+ breast cancer?"
+- "What biomarkers predict immunotherapy response?"
+- "Explain the mechanism of osimertinib in T790M-positive NSCLC"
 
-### 🔬 **Pathway Analysis**
-```
-"PI3K pathway components"
-"Pathways involved in breast cancer"
-"MAPK signaling network"
-```
+### Pathway and Network Analysis
+- "Show me the RAS-MAPK signaling pathway"
+- "What genes are involved in DNA repair?"
+- "How do different cancer pathways interact?"
+- "PI3K-AKT-mTOR pathway therapeutic targets"
+
+### Precision Medicine Queries
+- "KRAS G12C mutation and targeted therapy"
+- "PD-L1 biomarker assessment methods"
+- "BRCA1 mutations and synthetic lethality"
+- "HER2 amplification and antibody-drug conjugates"
 
 ## 🏗️ Project Structure
 

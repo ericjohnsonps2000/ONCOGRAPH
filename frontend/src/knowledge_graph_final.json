@@ -28,6 +28,74 @@
       }
     },
     {
+      "id": "disease:Colorectal Cancer",
+      "label": "Colorectal Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "colorectal",
+          "colon cancer",
+          "rectal cancer",
+          "CRC"
+        ],
+        "description": "Cancer that develops in the colon or rectum, often starting from polyps"
+      }
+    },
+    {
+      "id": "disease:Pancreatic Cancer",
+      "label": "Pancreatic Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "pancreatic",
+          "PDAC",
+          "pancreatic adenocarcinoma"
+        ],
+        "description": "Aggressive cancer of the pancreas with poor prognosis"
+      }
+    },
+    {
+      "id": "disease:Prostate Cancer",
+      "label": "Prostate Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "prostate",
+          "PCa"
+        ],
+        "description": "Cancer of the prostate gland in men"
+      }
+    },
+    {
+      "id": "disease:Melanoma",
+      "label": "Melanoma",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "malignant melanoma",
+          "skin cancer"
+        ],
+        "description": "Aggressive form of skin cancer originating from melanocytes"
+      }
+    },
+    {
+      "id": "disease:Ovarian Cancer",
+      "label": "Ovarian Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": [
+          "ovarian",
+          "epithelial ovarian cancer"
+        ],
+        "description": "Cancer that begins in the ovaries"
+      }
+    },
+    {
       "id": "pathway:PI3K/AKT activation",
       "label": "PI3K/AKT activation",
       "type": "pathway",
@@ -655,6 +723,184 @@
       }
     },
     {
+      "id": "biomarker:APC",
+      "label": "APC",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Tumor suppressor gene",
+        "description": "Key gene in colorectal cancer, part of Wnt signaling pathway"
+      }
+    },
+    {
+      "id": "gene:APC",
+      "label": "APC",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Tumor suppressor gene that regulates the Wnt signaling pathway, frequently mutated in colorectal cancer"
+      }
+    },
+    {
+      "id": "pathway:Wnt signaling pathway",
+      "label": "Wnt signaling pathway",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Critical pathway for cell fate determination and cancer development, especially colorectal cancer"
+      }
+    },
+    {
+      "id": "gene:PIK3CA",
+      "label": "PIK3CA",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Encodes the catalytic subunit of PI3K, frequently mutated in various cancers"
+      }
+    },
+    {
+      "id": "biomarker:PIK3CA",
+      "label": "PIK3CA",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Oncogene",
+        "description": "PI3K pathway mutations in breast, colorectal, and other cancers"
+      }
+    },
+    {
+      "id": "gene:AR",
+      "label": "AR",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Androgen receptor, key driver of prostate cancer"
+      }
+    },
+    {
+      "id": "biomarker:PSA",
+      "label": "PSA",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Protein",
+        "description": "Prostate-specific antigen, key diagnostic marker for prostate cancer"
+      }
+    },
+    {
+      "id": "pathway:Androgen receptor signaling",
+      "label": "Androgen receptor signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Primary pathway driving prostate cancer growth and progression"
+      }
+    },
+    {
+      "id": "gene:NRAS",
+      "label": "NRAS",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "RAS family oncogene, commonly mutated in melanoma"
+      }
+    },
+    {
+      "id": "biomarker:BRAF V600E",
+      "label": "BRAF V600E",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Mutation",
+        "description": "Specific BRAF mutation common in melanoma, targetable with inhibitors"
+      }
+    },
+    {
+      "id": "gene:CDKN2A",
+      "label": "CDKN2A",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Tumor suppressor gene, encodes p16 and p14ARF, often deleted in melanoma"
+      }
+    },
+    {
+      "id": "pathway:Melanoma pathway",
+      "label": "Melanoma pathway",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "BRAF/NRAS mutations leading to MAPK pathway activation in melanoma"
+      }
+    },
+    {
+      "id": "gene:SMAD4",
+      "label": "SMAD4",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "Tumor suppressor in TGF-beta signaling pathway, frequently lost in pancreatic cancer"
+      }
+    },
+    {
+      "id": "biomarker:CA 19-9",
+      "label": "CA 19-9",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Protein",
+        "description": "Carbohydrate antigen, elevated in pancreatic cancer"
+      }
+    },
+    {
+      "id": "pathway:TGF-beta signaling",
+      "label": "TGF-beta signaling",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Critical pathway for cell growth regulation, disrupted in many cancers"
+      }
+    },
+    {
+      "id": "biomarker:CEA",
+      "label": "CEA",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Protein",
+        "description": "Carcinoembryonic antigen, elevated in colorectal cancer"
+      }
+    },
+    {
+      "id": "gene:MLH1",
+      "label": "MLH1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "function": "DNA mismatch repair gene, loss leads to microsatellite instability"
+      }
+    },
+    {
+      "id": "biomarker:MSI",
+      "label": "MSI",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "biomarker_type": "Genomic instability",
+        "description": "Microsatellite instability, predictive of immunotherapy response"
+      }
+    },
+    {
+      "id": "pathway:DNA mismatch repair",
+      "label": "DNA mismatch repair",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "description": "Critical DNA repair mechanism, defects lead to cancer susceptibility"
+      }
+    },
+    {
       "id": "drug:Osimertinib",
       "label": "Osimertinib",
       "type": "drug",
@@ -1037,6 +1283,123 @@
       "color": "#f4a261",
       "properties": {
         "mechanism": "PARP inhibitor for BRCA-mutated cancer"
+      }
+    },
+    {
+      "id": "drug:Vemurafenib",
+      "label": "Vemurafenib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "BRAF V600E inhibitor for melanoma"
+      }
+    },
+    {
+      "id": "drug:Dabrafenib",
+      "label": "Dabrafenib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "BRAF V600E inhibitor"
+      }
+    },
+    {
+      "id": "drug:Trametinib",
+      "label": "Trametinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "MEK inhibitor, used with BRAF inhibitors"
+      }
+    },
+    {
+      "id": "drug:Cetuximab",
+      "label": "Cetuximab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "EGFR inhibitor for colorectal cancer (KRAS wild-type)"
+      }
+    },
+    {
+      "id": "drug:Bevacizumab",
+      "label": "Bevacizumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "VEGF inhibitor, anti-angiogenic therapy"
+      }
+    },
+    {
+      "id": "drug:Gemcitabine",
+      "label": "Gemcitabine",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Nucleoside analog for pancreatic cancer"
+      }
+    },
+    {
+      "id": "drug:FOLFIRINOX",
+      "label": "FOLFIRINOX",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Combination chemotherapy for pancreatic cancer"
+      }
+    },
+    {
+      "id": "drug:Enzalutamide",
+      "label": "Enzalutamide",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "Androgen receptor antagonist for prostate cancer"
+      }
+    },
+    {
+      "id": "drug:Abiraterone",
+      "label": "Abiraterone",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "CYP17 inhibitor for prostate cancer"
+      }
+    },
+    {
+      "id": "drug:Ipilimumab",
+      "label": "Ipilimumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "CTLA-4 inhibitor immunotherapy"
+      }
+    },
+    {
+      "id": "drug:Alpelisib",
+      "label": "Alpelisib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PI3K inhibitor for PIK3CA-mutated breast cancer"
+      }
+    },
+    {
+      "id": "drug:Rucaparib",
+      "label": "Rucaparib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PARP inhibitor for ovarian cancer"
+      }
+    },
+    {
+      "id": "drug:Niraparib",
+      "label": "Niraparib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "mechanism": "PARP inhibitor for ovarian cancer maintenance"
       }
     }
   ],
@@ -2468,6 +2831,245 @@
       "target": "gene:BRCA2",
       "relation": "targets_gene",
       "properties": {}
-    }
-  ]
+    },
+    {
+      "source": "pathway:Wnt signaling pathway",
+      "target": "disease:Colorectal Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:APC",
+      "target": "pathway:Wnt signaling pathway",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:APC",
+      "target": "pathway:Wnt signaling pathway",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CEA",
+      "target": "disease:Colorectal Cancer",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "drug:Cetuximab",
+      "target": "disease:Colorectal Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Cetuximab",
+      "target": "gene:EGFR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Bevacizumab",
+      "target": "disease:Colorectal Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "gene:MLH1",
+      "target": "pathway:DNA mismatch repair",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:MSI",
+      "target": "pathway:DNA mismatch repair",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Androgen receptor signaling",
+      "target": "disease:Prostate Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:AR",
+      "target": "pathway:Androgen receptor signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PSA",
+      "target": "disease:Prostate Cancer",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "drug:Enzalutamide",
+      "target": "disease:Prostate Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Enzalutamide",
+      "target": "gene:AR",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Abiraterone",
+      "target": "disease:Prostate Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "pathway:Melanoma pathway",
+      "target": "disease:Melanoma",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:BRAF",
+      "target": "pathway:Melanoma pathway",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "gene:NRAS",
+      "target": "pathway:Melanoma pathway",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:BRAF V600E",
+      "target": "disease:Melanoma",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "drug:Vemurafenib",
+      "target": "disease:Melanoma",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Vemurafenib",
+      "target": "gene:BRAF",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Dabrafenib",
+      "target": "disease:Melanoma",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Dabrafenib",
+      "target": "gene:BRAF",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Trametinib",
+      "target": "disease:Melanoma",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Ipilimumab",
+      "target": "disease:Melanoma",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "pathway:TGF-beta signaling",
+      "target": "disease:Pancreatic Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "gene:SMAD4",
+      "target": "pathway:TGF-beta signaling",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:CA 19-9",
+      "target": "disease:Pancreatic Cancer",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "drug:Gemcitabine",
+      "target": "disease:Pancreatic Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:FOLFIRINOX",
+      "target": "disease:Pancreatic Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "gene:PIK3CA",
+      "target": "pathway:PI3K/AKT activation",
+      "relation": "participates_in",
+      "properties": {}
+    },
+    {
+      "source": "biomarker:PIK3CA",
+      "target": "pathway:PI3K/AKT activation",
+      "relation": "indicates",
+      "properties": {}
+    },
+    {
+      "source": "drug:Alpelisib",
+      "target": "disease:Breast Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Alpelisib",
+      "target": "gene:PIK3CA",
+      "relation": "targets_gene",
+      "properties": {}
+    },
+    {
+      "source": "drug:Rucaparib",
+      "target": "disease:Ovarian Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "drug:Niraparib",
+      "target": "disease:Ovarian Cancer",
+      "relation": "indicated_for",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Colorectal Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Pancreatic Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Prostate Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    },
+    {
+      "source": "pathway:PI3K/AKT activation",
+      "target": "disease:Ovarian Cancer",
+      "relation": "associated_with",
+      "properties": {}
+    }]
 }

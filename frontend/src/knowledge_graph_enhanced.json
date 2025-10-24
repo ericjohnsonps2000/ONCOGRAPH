@@ -1,0 +1,929 @@
+{
+  "meta": {
+    "description": "Enhanced Oncology Knowledge Graph with comprehensive molecular mechanisms, clinical data, and therapeutic information",
+    "version": "2.0",
+    "last_updated": "2025-10-22",
+    "data_sources": [
+      "TCGA", "cBioPortal", "OncoKB", "ClinVar", "DrugBank", "KEGG", "Reactome", "UniProt"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "disease:Lung Cancer",
+      "label": "Lung Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": ["lung", "NSCLC", "SCLC", "pulmonary carcinoma"],
+        "description": "Malignant tumor arising from lung epithelial cells",
+        "subtypes": [
+          {
+            "name": "Non-Small Cell Lung Cancer (NSCLC)",
+            "frequency": "85%",
+            "subtypes": ["Adenocarcinoma (40%)", "Squamous Cell Carcinoma (25%)", "Large Cell Carcinoma (10%)"]
+          },
+          {
+            "name": "Small Cell Lung Cancer (SCLC)",
+            "frequency": "15%",
+            "characteristics": "Highly aggressive, rapid doubling time"
+          }
+        ],
+        "epidemiology": {
+          "incidence": "2.2 million new cases/year globally",
+          "mortality": "Leading cause of cancer death worldwide",
+          "5_year_survival": "18.6%"
+        },
+        "risk_factors": ["Smoking (85%)", "Radon exposure", "Asbestos", "Air pollution"],
+        "staging": ["Stage I-IV", "TNM classification"],
+        "molecular_alterations": {
+          "EGFR_mutations": "15-20% in adenocarcinoma",
+          "KRAS_mutations": "25-30%",
+          "ALK_fusions": "3-5%",
+          "ROS1_fusions": "1-2%",
+          "BRAF_mutations": "2-3%"
+        }
+      }
+    },
+    {
+      "id": "disease:Breast Cancer",
+      "label": "Breast Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": ["breast", "mammary carcinoma"],
+        "description": "Malignant tumor originating in breast tissue",
+        "subtypes": [
+          {
+            "name": "Hormone Receptor Positive (HR+)",
+            "frequency": "70%",
+            "description": "Express estrogen and/or progesterone receptors"
+          },
+          {
+            "name": "HER2 Positive",
+            "frequency": "15-20%",
+            "description": "Overexpress HER2/ERBB2 protein"
+          },
+          {
+            "name": "Triple Negative (TNBC)",
+            "frequency": "15%",
+            "description": "Lack ER, PR, and HER2 expression"
+          }
+        ],
+        "epidemiology": {
+          "incidence": "2.3 million new cases/year globally",
+          "mortality": "Second leading cause of cancer death in women",
+          "5_year_survival": "90% (localized), 85% (regional), 28% (distant)"
+        },
+        "molecular_alterations": {
+          "PIK3CA_mutations": "40%",
+          "TP53_mutations": "30%",
+          "BRCA1_mutations": "5-10% hereditary",
+          "BRCA2_mutations": "5-10% hereditary",
+          "HER2_amplification": "15-20%"
+        },
+        "biomarkers": ["ER", "PR", "HER2", "Ki-67", "PD-L1"]
+      }
+    },
+    {
+      "id": "disease:Colorectal Cancer",
+      "label": "Colorectal Cancer",
+      "type": "disease",
+      "color": "#9b5de5",
+      "properties": {
+        "aliases": ["colorectal", "colon cancer", "rectal cancer", "CRC"],
+        "description": "Malignant tumor arising from colon or rectal epithelium",
+        "pathogenesis": "Adenoma-carcinoma sequence: Normal epithelium → Adenoma → Carcinoma",
+        "molecular_pathways": [
+          {
+            "name": "Chromosomal Instability (CIN)",
+            "frequency": "85%",
+            "key_alterations": ["APC", "KRAS", "PIK3CA", "TP53"]
+          },
+          {
+            "name": "Microsatellite Instability (MSI)",
+            "frequency": "15%",
+            "key_alterations": ["MLH1", "MSH2", "MSH6", "PMS2"]
+          }
+        ],
+        "epidemiology": {
+          "incidence": "1.9 million new cases/year globally",
+          "mortality": "Third leading cause of cancer death",
+          "5_year_survival": "90% (Stage I), 71% (Stage III), 14% (Stage IV)"
+        },
+        "molecular_alterations": {
+          "APC_mutations": "80%",
+          "KRAS_mutations": "40%",
+          "PIK3CA_mutations": "20%",
+          "TP53_mutations": "60%",
+          "BRAF_mutations": "10%"
+        }
+      }
+    },
+    {
+      "id": "gene:EGFR",
+      "label": "EGFR",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "full_name": "Epidermal Growth Factor Receptor",
+        "chromosome": "7p11.2",
+        "protein_class": "Receptor tyrosine kinase",
+        "structure": {
+          "domains": [
+            "Extracellular ligand-binding domain (domains I-IV)",
+            "Transmembrane domain",
+            "Intracellular tyrosine kinase domain",
+            "C-terminal regulatory domain"
+          ],
+          "size": "1210 amino acids",
+          "molecular_weight": "134 kDa"
+        },
+        "function": "Cell surface receptor that binds EGF family ligands, undergoes dimerization and autophosphorylation, activating downstream PI3K/AKT and RAS/MAPK pathways",
+        "ligands": ["EGF", "TGF-α", "Amphiregulin", "Betacellulin", "Epiregulin"],
+        "clinical_significance": {
+          "lung_cancer": {
+            "mutation_frequency": "15-20% in adenocarcinoma",
+            "common_mutations": [
+              {
+                "name": "L858R",
+                "frequency": "45%",
+                "location": "Exon 21",
+                "effect": "Increased kinase activity"
+              },
+              {
+                "name": "Exon 19 deletions",
+                "frequency": "45%",
+                "effect": "Constitutive activation"
+              },
+              {
+                "name": "T790M",
+                "frequency": "50% of resistant cases",
+                "location": "Exon 20",
+                "effect": "Resistance to 1st/2nd gen TKIs"
+              }
+            ]
+          },
+          "other_cancers": {
+            "overexpression": "Glioblastoma (40%), Head/Neck (90%), Colorectal (25-77%)"
+          }
+        },
+        "therapeutic_targets": ["Osimertinib", "Gefitinib", "Erlotinib", "Afatinib", "Cetuximab"],
+        "pathways": ["PI3K/AKT/mTOR", "RAS/MAPK", "JAK/STAT", "PLCγ"]
+      }
+    },
+    {
+      "id": "gene:KRAS",
+      "label": "KRAS",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "full_name": "Kirsten Rat Sarcoma Viral Oncogene Homolog",
+        "chromosome": "12p12.1",
+        "protein_class": "Small GTPase",
+        "structure": {
+          "domains": [
+            "G domain (GTPase domain)",
+            "Hypervariable region",
+            "CAAX motif for membrane localization"
+          ],
+          "size": "189 amino acids",
+          "molecular_weight": "21 kDa"
+        },
+        "function": "Molecular switch cycling between GTP-bound (active) and GDP-bound (inactive) states, regulating cell proliferation, differentiation, and apoptosis",
+        "mechanism": "Activated by growth factor receptors via GEFs (e.g., SOS), inactivated by GAPs (e.g., NF1)",
+        "clinical_significance": {
+          "pan_cancer": {
+            "mutation_frequency": "30% across all cancers",
+            "hotspot_codons": [
+              {
+                "codon": "G12",
+                "frequency": "80%",
+                "common_variants": ["G12D", "G12V", "G12C"],
+                "effect": "Impaired GTPase activity"
+              },
+              {
+                "codon": "G13",
+                "frequency": "15%",
+                "common_variant": "G13D",
+                "effect": "Reduced GAP sensitivity"
+              },
+              {
+                "codon": "Q61",
+                "frequency": "5%",
+                "common_variants": ["Q61H", "Q61L", "Q61R"],
+                "effect": "Constitutive activation"
+              }
+            ]
+          },
+          "cancer_specific": {
+            "pancreatic": "95%",
+            "colorectal": "40%",
+            "lung_adenocarcinoma": "25%",
+            "endometrial": "15-30%"
+          }
+        },
+        "drug_resistance": {
+          "EGFR_inhibitors": "Predictive biomarker for resistance in colorectal cancer",
+          "cetuximab_resistance": "KRAS mutations confer primary resistance"
+        },
+        "therapeutic_targets": ["Sotorasib (G12C)", "Adagrasib (G12C)", "MRTX1133 (G12D)"],
+        "pathways": ["MAPK/ERK", "PI3K/AKT", "RAL-GEF"]
+      }
+    },
+    {
+      "id": "gene:TP53",
+      "label": "TP53",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "full_name": "Tumor Protein p53",
+        "chromosome": "17p13.1",
+        "protein_class": "Transcription factor/Tumor suppressor",
+        "nickname": "Guardian of the genome",
+        "structure": {
+          "domains": [
+            "N-terminal transactivation domain",
+            "Proline-rich domain",
+            "DNA-binding domain (core domain)",
+            "Tetramerization domain",
+            "C-terminal regulatory domain"
+          ],
+          "size": "393 amino acids",
+          "molecular_weight": "43 kDa"
+        },
+        "function": "Master regulator responding to DNA damage, oncogene activation, and cellular stress by inducing cell cycle arrest, DNA repair, or apoptosis",
+        "mechanism": {
+          "activation": "Post-translational modifications (phosphorylation, acetylation) in response to stress",
+          "target_genes": ["p21 (CDKN1A)", "BAX", "PUMA", "MDM2", "GADD45"],
+          "outcomes": ["G1/S checkpoint arrest", "Apoptosis", "Senescence", "DNA repair"]
+        },
+        "clinical_significance": {
+          "mutation_frequency": "50% across all cancers",
+          "li_fraumeni_syndrome": "Germline mutations cause hereditary cancer predisposition",
+          "cancer_specific": {
+            "ovarian": "95%",
+            "colorectal": "60%",
+            "lung": "50%",
+            "breast": "30%",
+            "glioblastoma": "25%"
+          },
+          "hotspot_mutations": [
+            {
+              "residue": "R175H",
+              "frequency": "5%",
+              "effect": "Loss of DNA-binding activity"
+            },
+            {
+              "residue": "R248Q/W",
+              "frequency": "4%",
+              "effect": "Conformational change"
+            },
+            {
+              "residue": "R273H/C",
+              "frequency": "4%",
+              "effect": "Contact mutation"
+            }
+          ]
+        },
+        "therapeutic_implications": {
+          "wild_type": "Sensitive to MDM2 inhibitors, DNA-damaging agents",
+          "mutant": "Potential targets: p53 reactivators, synthetic lethal approaches"
+        },
+        "pathways": ["DNA damage response", "Cell cycle control", "Apoptosis", "Autophagy"]
+      }
+    },
+    {
+      "id": "gene:BRCA1",
+      "label": "BRCA1",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "full_name": "Breast Cancer 1, Early Onset",
+        "chromosome": "17q21.31",
+        "protein_class": "Tumor suppressor/DNA repair protein",
+        "structure": {
+          "domains": [
+            "RING finger domain (E3 ubiquitin ligase)",
+            "Coiled-coil domain",
+            "BRCT domains (2x) - protein interaction"
+          ],
+          "size": "1863 amino acids",
+          "molecular_weight": "208 kDa"
+        },
+        "function": "Key component of homologous recombination DNA repair pathway, cell cycle checkpoint control, and transcriptional regulation",
+        "mechanism": {
+          "dna_repair": "Forms BRCA1-associated genome surveillance complex (BASC)",
+          "interactions": ["BRCA2", "RAD51", "PALB2", "53BP1", "ATM", "CHK2"],
+          "cell_cycle": "G2/M checkpoint regulation"
+        },
+        "clinical_significance": {
+          "hereditary_cancer": {
+            "breast_cancer_risk": "55-72% lifetime risk",
+            "ovarian_cancer_risk": "39-44% lifetime risk",
+            "prostate_cancer_risk": "Increased risk in men",
+            "penetrance": "Age-dependent, modifier genes influence risk"
+          },
+          "mutation_types": [
+            {
+              "type": "Frameshift",
+              "frequency": "60%",
+              "effect": "Truncated protein"
+            },
+            {
+              "type": "Nonsense",
+              "frequency": "25%",
+              "effect": "Premature stop codon"
+            },
+            {
+              "type": "Large rearrangements",
+              "frequency": "10%",
+              "effect": "Exon deletions/duplications"
+            }
+          ],
+          "founder_mutations": {
+            "185delAG": "Ashkenazi Jewish population",
+            "5382insC": "Eastern European",
+            "C61G": "Norwegian"
+          }
+        },
+        "therapeutic_implications": {
+          "parp_inhibitors": "Synthetic lethality in BRCA1-deficient tumors",
+          "platinum_sensitivity": "Enhanced response to DNA cross-linking agents",
+          "immunotherapy": "HRD tumors show increased neoantigen burden"
+        },
+        "biomarkers": ["HRD score", "Genomic LOH", "Platinum sensitivity"],
+        "pathways": ["Homologous recombination", "NHEJ", "Cell cycle checkpoints", "Fanconi anemia pathway"]
+      }
+    },
+    {
+      "id": "gene:HER2",
+      "label": "HER2",
+      "type": "gene",
+      "color": "#e63946",
+      "properties": {
+        "full_name": "Human Epidermal Growth Factor Receptor 2",
+        "official_name": "ERBB2",
+        "chromosome": "17q12",
+        "protein_class": "Receptor tyrosine kinase",
+        "structure": {
+          "domains": [
+            "Extracellular domain (ECD)",
+            "Transmembrane domain",
+            "Intracellular tyrosine kinase domain"
+          ],
+          "size": "1255 amino acids",
+          "molecular_weight": "138 kDa"
+        },
+        "function": "Member of EGFR family, forms heterodimers with other ERBB receptors, lacks high-affinity ligand binding but serves as preferred dimerization partner",
+        "mechanism": {
+          "activation": "Ligand-independent dimerization, transphosphorylation",
+          "signaling": "PI3K/AKT and MAPK pathway activation",
+          "cellular_effects": "Proliferation, survival, invasion, angiogenesis"
+        },
+        "clinical_significance": {
+          "breast_cancer": {
+            "amplification_frequency": "15-20%",
+            "assessment": "IHC (0, 1+, 2+, 3+) and FISH confirmation",
+            "prognosis": "Historically poor, improved with targeted therapy"
+          },
+          "gastric_cancer": {
+            "amplification_frequency": "10-15%",
+            "therapeutic_target": "Trastuzumab approved"
+          },
+          "other_cancers": "Bladder, endometrial, salivary gland"
+        },
+        "therapeutic_targets": {
+          "monoclonal_antibodies": [
+            {
+              "drug": "Trastuzumab",
+              "mechanism": "ECD binding, ADCC, inhibits dimerization",
+              "approval": "1998 (metastatic), 2006 (adjuvant)"
+            },
+            {
+              "drug": "Pertuzumab",
+              "mechanism": "Prevents HER2-HER3 dimerization",
+              "combination": "With trastuzumab (dual blockade)"
+            }
+          ],
+          "tyrosine_kinase_inhibitors": [
+            {
+              "drug": "Lapatinib",
+              "mechanism": "Reversible dual EGFR/HER2 inhibitor",
+              "indication": "Brain metastases, trastuzumab resistance"
+            },
+            {
+              "drug": "Neratinib",
+              "mechanism": "Irreversible pan-HER inhibitor",
+              "indication": "Extended adjuvant therapy"
+            }
+          ],
+          "antibody_drug_conjugates": [
+            {
+              "drug": "Trastuzumab emtansine (T-DM1)",
+              "mechanism": "Targeted delivery of cytotoxic payload",
+              "indication": "Resistant/recurrent disease"
+            }
+          ]
+        },
+        "resistance_mechanisms": [
+          "PI3K/AKT activation",
+          "Alternative receptor signaling",
+          "Immune evasion",
+          "Tumor heterogeneity"
+        ],
+        "pathways": ["PI3K/AKT/mTOR", "MAPK/ERK", "JAK/STAT", "PLCγ/PKC"]
+      }
+    },
+    {
+      "id": "drug:Trastuzumab",
+      "label": "Trastuzumab",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "brand_names": ["Herceptin", "Ogivri", "Herzuma"],
+        "drug_class": "Monoclonal antibody",
+        "molecular_target": "HER2/ERBB2 extracellular domain",
+        "mechanism_of_action": {
+          "primary": "Binds to domain IV of HER2 extracellular region",
+          "effects": [
+            "Inhibits HER2 homodimerization and heterodimerization",
+            "Induces antibody-dependent cellular cytotoxicity (ADCC)",
+            "Inhibits PI3K/AKT signaling",
+            "Reduces angiogenesis",
+            "Induces cell cycle arrest"
+          ]
+        },
+        "pharmacology": {
+          "half_life": "28.5 days",
+          "administration": "IV infusion",
+          "metabolism": "Proteolytic degradation",
+          "distribution": "Limited extravascular distribution"
+        },
+        "clinical_applications": {
+          "breast_cancer": {
+            "indications": [
+              "HER2+ metastatic breast cancer",
+              "HER2+ early-stage breast cancer (adjuvant)",
+              "HER2+ neoadjuvant therapy"
+            ],
+            "efficacy": "50% reduction in recurrence risk (adjuvant)",
+            "combinations": ["Chemotherapy", "Pertuzumab", "CDK4/6 inhibitors"]
+          },
+          "gastric_cancer": {
+            "indication": "HER2+ advanced gastric/GEJ adenocarcinoma",
+            "combination": "With chemotherapy (first-line)"
+          }
+        },
+        "adverse_effects": {
+          "cardiotoxicity": {
+            "frequency": "2-7%",
+            "mechanism": "HER2 role in cardiomyocyte survival",
+            "monitoring": "ECHO/MUGA every 3 months",
+            "reversibility": "Usually reversible upon discontinuation"
+          },
+          "infusion_reactions": "40% (mostly grade 1-2)",
+          "pulmonary_toxicity": "Rare (<1%)"
+        },
+        "resistance_mechanisms": [
+          "PI3K pathway activation",
+          "Insulin-like growth factor-1 receptor (IGF-1R) upregulation",
+          "HER family receptor crosstalk",
+          "Loss of PTEN tumor suppressor"
+        ],
+        "biomarkers": {
+          "predictive": "HER2 amplification/overexpression (IHC 3+ or FISH+)",
+          "resistance": "PIK3CA mutations, PTEN loss"
+        },
+        "approval_history": {
+          "fda_approval": "1998 (metastatic), 2006 (adjuvant)",
+          "breakthrough_drug": "First targeted therapy for breast cancer"
+        }
+      }
+    },
+    {
+      "id": "drug:Osimertinib",
+      "label": "Osimertinib",
+      "type": "drug",
+      "color": "#f4a261",
+      "properties": {
+        "brand_name": "Tagrisso",
+        "drug_class": "Third-generation EGFR tyrosine kinase inhibitor",
+        "molecular_target": "EGFR with T790M resistance mutation",
+        "mechanism_of_action": {
+          "primary": "Irreversible inhibition of EGFR kinase domain",
+          "selectivity": [
+            "Active against sensitizing mutations (L858R, exon 19 del)",
+            "Overcomes T790M resistance mutation",
+            "Wild-type EGFR sparing at therapeutic doses"
+          ],
+          "binding": "Covalent binding to Cys797 in ATP-binding pocket"
+        },
+        "pharmacology": {
+          "half_life": "48 hours",
+          "bioavailability": "Good oral absorption",
+          "metabolism": "CYP3A4, CYP3A5",
+          "cns_penetration": "Excellent (crosses blood-brain barrier)"
+        },
+        "clinical_applications": {
+          "nsclc": {
+            "first_line": "EGFR-mutated advanced NSCLC",
+            "second_line": "T790M-positive NSCLC after 1st/2nd gen TKI progression",
+            "efficacy": "PFS 18.9 months vs 10.2 months (erlotinib) in 1st line"
+          },
+          "brain_metastases": "Superior CNS activity vs other EGFR TKIs"
+        },
+        "resistance_mutations": [
+          {
+            "mutation": "C797S",
+            "mechanism": "Prevents covalent binding",
+            "frequency": "15-20% of resistant cases"
+          },
+          {
+            "mutation": "G796S/D/R",
+            "mechanism": "Steric hindrance",
+            "frequency": "5-10%"
+          }
+        ],
+        "adverse_effects": {
+          "common": [
+            "Diarrhea (58%)",
+            "Rash (34%)",
+            "Dry skin (23%)",
+            "Nail toxicity (22%)"
+          ],
+          "serious": [
+            "Interstitial lung disease (3.3%)",
+            "QTc prolongation (0.9%)",
+            "Cardiomyopathy (rare)"
+          ]
+        },
+        "biomarkers": {
+          "predictive": [
+            "EGFR L858R mutation",
+            "EGFR exon 19 deletion",
+            "EGFR T790M mutation"
+          ],
+          "resistance": "Liquid biopsy for resistance mutations"
+        },
+        "approval_history": {
+          "fda_approval": "2015 (T790M+), 2018 (1st line)",
+          "designation": "Breakthrough therapy, priority review"
+        }
+      }
+    },
+    {
+      "id": "pathway:PI3K-AKT-mTOR",
+      "label": "PI3K-AKT-mTOR Pathway",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "full_name": "Phosphoinositide 3-kinase/Protein Kinase B/Mechanistic Target of Rapamycin",
+        "function": "Master regulator of cell survival, growth, proliferation, and metabolism",
+        "components": {
+          "pi3k": {
+            "classes": ["Class I (PI3Kα, β, γ, δ)", "Class II", "Class III"],
+            "regulation": "Activated by RTKs, RAS, cytokines",
+            "function": "Phosphorylates PIP2 to generate PIP3"
+          },
+          "akt": {
+            "isoforms": ["AKT1 (PKBα)", "AKT2 (PKBβ)", "AKT3 (PKBγ)"],
+            "activation": "PDK1 and mTORC2-mediated phosphorylation",
+            "substrates": ["mTOR", "GSK3β", "FOXO", "BAD", "MDM2"]
+          },
+          "mtor": {
+            "complexes": [
+              {
+                "name": "mTORC1",
+                "components": ["mTOR", "Raptor", "mLST8", "PRAS40", "Deptor"],
+                "functions": ["Protein synthesis", "Lipid synthesis", "Autophagy inhibition"]
+              },
+              {
+                "name": "mTORC2",
+                "components": ["mTOR", "Rictor", "mLST8", "mSin1", "Protor"],
+                "functions": ["AKT activation", "Cytoskeletal organization"]
+              }
+            ]
+          }
+        },
+        "regulation": {
+          "positive": ["Growth factors", "Nutrients", "Energy status"],
+          "negative": ["PTEN", "TSC1/2", "LKB1/AMPK", "p53"]
+        },
+        "cellular_functions": [
+          "Cell survival and apoptosis resistance",
+          "Protein synthesis and ribosome biogenesis",
+          "Glucose metabolism and glycolysis",
+          "Lipid synthesis",
+          "Cell cycle progression",
+          "Autophagy regulation",
+          "Angiogenesis"
+        ],
+        "cancer_relevance": {
+          "alterations": [
+            "PIK3CA mutations (40% breast cancer)",
+            "PTEN loss (30-50% various cancers)",
+            "AKT amplification",
+            "mTOR mutations (rare)"
+          ],
+          "therapeutic_targets": [
+            "PI3K inhibitors (Alpelisib)",
+            "AKT inhibitors (Capivasertib)",
+            "mTOR inhibitors (Everolimus, Temsirolimus)",
+            "Dual PI3K/mTOR inhibitors"
+          ]
+        },
+        "clinical_significance": {
+          "drug_resistance": "Common resistance mechanism to targeted therapies",
+          "biomarkers": ["PIK3CA mutations", "PTEN expression", "p-AKT levels"],
+          "combination_therapy": "Rationale for combining with other targeted agents"
+        }
+      }
+    },
+    {
+      "id": "pathway:RAS-MAPK",
+      "label": "RAS-MAPK Pathway",
+      "type": "pathway",
+      "color": "#2a9d8f",
+      "properties": {
+        "full_name": "RAS-Mitogen-Activated Protein Kinase Pathway",
+        "function": "Transmits signals from cell surface to nucleus controlling proliferation, differentiation, and survival",
+        "components": {
+          "ras_proteins": [
+            "KRAS (most frequently mutated in cancer)",
+            "NRAS",
+            "HRAS"
+          ],
+          "raf_kinases": [
+            "BRAF (most active)",
+            "CRAF (RAF1)",
+            "ARAF"
+          ],
+          "mek_kinases": ["MEK1", "MEK2"],
+          "erk_kinases": ["ERK1", "ERK2"]
+        },
+        "mechanism": {
+          "activation": "RTK → GRB2/SOS → RAS-GTP → RAF → MEK → ERK",
+          "nuclear_translocation": "Active ERK translocates to nucleus",
+          "transcriptional_targets": ["FOS", "JUN", "MYC", "CCND1"]
+        },
+        "regulation": {
+          "positive": ["Growth factors", "Cytokines", "Stress signals"],
+          "negative": ["DUSP phosphatases", "SPRY proteins", "NF1 (RAS-GAP)"],
+          "feedback": "ERK-mediated negative feedback on RAS/RAF"
+        },
+        "cellular_functions": [
+          "Cell cycle progression (G1/S transition)",
+          "Cell proliferation",
+          "Differentiation",
+          "Migration and invasion",
+          "Angiogenesis",
+          "Apoptosis resistance"
+        ],
+        "cancer_relevance": {
+          "mutation_frequency": "30% of all cancers have RAS mutations",
+          "cancer_specific": {
+            "pancreatic": "KRAS mutations in 95%",
+            "colorectal": "KRAS/BRAF mutations in 50%",
+            "melanoma": "BRAF mutations in 50%",
+            "lung": "KRAS mutations in 25%"
+          },
+          "therapeutic_targets": [
+            "MEK inhibitors (Trametinib, Cobimetinib)",
+            "BRAF inhibitors (Vemurafenib, Dabrafenib)",
+            "ERK inhibitors (Ulixertinib)",
+            "KRAS G12C inhibitors (Sotorasib, Adagrasib)"
+          ]
+        },
+        "resistance_mechanisms": [
+          "Reactivation of MAPK signaling",
+          "PI3K/AKT pathway activation",
+          "Receptor tyrosine kinase upregulation",
+          "Cell cycle checkpoint bypass"
+        ],
+        "biomarkers": [
+          "RAS mutation status",
+          "BRAF mutation status",
+          "p-ERK levels",
+          "DUSP expression"
+        ]
+      }
+    },
+    {
+      "id": "biomarker:PD-L1",
+      "label": "PD-L1",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "full_name": "Programmed Death-Ligand 1",
+        "official_name": "CD274",
+        "protein_class": "Immune checkpoint molecule",
+        "function": "Transmembrane protein that serves as a ligand for PD-1 receptor, mediating immune suppression",
+        "mechanism": {
+          "expression": "Induced by interferon-γ, oncogenic signaling, hypoxia",
+          "interaction": "Binds to PD-1 on T cells and B7.1 on APCs",
+          "effect": "Inhibits T cell activation, promotes T cell exhaustion"
+        },
+        "clinical_significance": {
+          "biomarker_role": "Predictive biomarker for immune checkpoint inhibitor response",
+          "assessment_methods": [
+            {
+              "assay": "22C3 pharmDx",
+              "indication": "Pembrolizumab companion diagnostic",
+              "scoring": "TPS (Tumor Proportion Score)"
+            },
+            {
+              "assay": "28-8 pharmDx",
+              "indication": "Nivolumab complementary diagnostic",
+              "scoring": "Tumor cell and immune cell staining"
+            },
+            {
+              "assay": "SP142",
+              "indication": "Atezolizumab companion diagnostic",
+              "scoring": "IC (Immune Cell) scoring system"
+            }
+          ],
+          "cutoff_values": {
+            "high_expression": "≥50% TPS",
+            "positive_expression": "≥1% TPS",
+            "interpretation": "Higher expression correlates with better ICI response"
+          }
+        },
+        "cancer_expression": {
+          "high_frequency": ["Hodgkin lymphoma (95%)", "Head/neck SCC (60%)", "Bladder cancer (40%)"],
+          "moderate_frequency": ["NSCLC (30%)", "Renal cell carcinoma (25%)"],
+          "low_frequency": ["Breast cancer (15%)", "Colorectal cancer (5%)"]
+        },
+        "therapeutic_implications": {
+          "checkpoint_inhibitors": [
+            "Pembrolizumab (anti-PD-1)",
+            "Nivolumab (anti-PD-1)",
+            "Atezolizumab (anti-PD-L1)",
+            "Durvalumab (anti-PD-L1)"
+          ],
+          "combination_strategies": [
+            "PD-1/PD-L1 + CTLA-4 inhibitors",
+            "PD-1/PD-L1 + chemotherapy",
+            "PD-1/PD-L1 + targeted therapy"
+          ]
+        },
+        "limitations": {
+          "heterogeneity": "Spatial and temporal variation in expression",
+          "assay_differences": "Different antibodies and scoring systems",
+          "false_negatives": "Some PD-L1 negative tumors respond to ICIs"
+        },
+        "emerging_biomarkers": [
+          "Tumor mutational burden (TMB)",
+          "Microsatellite instability (MSI)",
+          "T cell infiltration",
+          "Interferon-γ signature"
+        ]
+      }
+    },
+    {
+      "id": "biomarker:CEA",
+      "label": "CEA",
+      "type": "biomarker",
+      "color": "#4361ee",
+      "properties": {
+        "full_name": "Carcinoembryonic Antigen",
+        "protein_class": "Glycoprotein",
+        "normal_function": "Cell adhesion molecule, expressed during fetal development",
+        "clinical_applications": {
+          "colorectal_cancer": {
+            "monitoring": "Post-treatment surveillance and recurrence detection",
+            "prognostic": "Elevated levels associated with advanced stage and poor prognosis",
+            "normal_range": "<5 ng/mL in non-smokers, <10 ng/mL in smokers",
+            "sensitivity": "70-80% in metastatic disease",
+            "specificity": "Limited due to elevation in benign conditions"
+          },
+          "other_cancers": [
+            "Pancreatic cancer",
+            "Gastric cancer", 
+            "Lung cancer",
+            "Breast cancer",
+            "Ovarian cancer"
+          ]
+        },
+        "limitations": {
+          "screening": "Not recommended for cancer screening due to low specificity",
+          "early_detection": "Often normal in early-stage disease",
+          "false_positives": "Elevated in smokers, inflammatory conditions, liver disease"
+        },
+        "clinical_utility": {
+          "baseline_measurement": "Before treatment initiation",
+          "monitoring_frequency": "Every 3-6 months post-treatment",
+          "rising_levels": "May indicate recurrence before imaging detection",
+          "half_life": "2-8 days"
+        },
+        "guidelines": {
+          "asco_recommendations": "Routine monitoring not recommended without clinical indication",
+          "nccn_guidelines": "Optional for surveillance in high-risk patients"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "gene:EGFR",
+      "target": "pathway:PI3K-AKT-mTOR",
+      "relation": "activates",
+      "properties": {
+        "mechanism": "RTK activation leads to PI3K recruitment and PIP3 generation",
+        "strength": "strong",
+        "conditions": "growth factor stimulation"
+      }
+    },
+    {
+      "source": "gene:EGFR",
+      "target": "pathway:RAS-MAPK",
+      "relation": "activates",
+      "properties": {
+        "mechanism": "GRB2/SOS recruitment leads to RAS activation",
+        "strength": "strong",
+        "conditions": "ligand binding and dimerization"
+      }
+    },
+    {
+      "source": "drug:Osimertinib",
+      "target": "gene:EGFR",
+      "relation": "inhibits",
+      "properties": {
+        "mechanism": "Irreversible covalent binding to Cys797",
+        "selectivity": "T790M-selective",
+        "ic50": "12 nM (T790M), 1 nM (L858R)"
+      }
+    },
+    {
+      "source": "drug:Trastuzumab",
+      "target": "gene:HER2",
+      "relation": "inhibits",
+      "properties": {
+        "mechanism": "Extracellular domain binding, prevents dimerization",
+        "additional_effects": ["ADCC", "internalization", "downregulation"]
+      }
+    },
+    {
+      "source": "gene:KRAS",
+      "target": "pathway:RAS-MAPK",
+      "relation": "activates",
+      "properties": {
+        "mechanism": "GTP-bound KRAS activates RAF kinases",
+        "mutations": "G12, G13, Q61 hotspots constitutively activate"
+      }
+    },
+    {
+      "source": "gene:TP53",
+      "target": "pathway:DNA Damage Response",
+      "relation": "regulates",
+      "properties": {
+        "mechanism": "Transcriptional activation of DNA repair genes",
+        "outcomes": ["cell cycle arrest", "apoptosis", "senescence"]
+      }
+    },
+    {
+      "source": "gene:BRCA1",
+      "target": "pathway:Homologous Recombination",
+      "relation": "essential_for",
+      "properties": {
+        "mechanism": "BRCA1-BRCA2-RAD51 complex formation",
+        "function": "DNA double-strand break repair"
+      }
+    },
+    {
+      "source": "biomarker:PD-L1",
+      "target": "disease:Lung Cancer",
+      "relation": "predicts_response",
+      "properties": {
+        "therapy": "Immune checkpoint inhibitors",
+        "cutoff": "≥50% TPS for first-line pembrolizumab"
+      }
+    },
+    {
+      "source": "biomarker:CEA",
+      "target": "disease:Colorectal Cancer",
+      "relation": "monitors",
+      "properties": {
+        "application": "Surveillance and recurrence detection",
+        "sensitivity": "70-80% in metastatic disease"
+      }
+    },
+    {
+      "source": "pathway:PI3K-AKT-mTOR",
+      "target": "disease:Breast Cancer",
+      "relation": "drives",
+      "properties": {
+        "frequency": "PIK3CA mutations in 40% of cases",
+        "therapeutic_target": "Alpelisib in HR+ breast cancer"
+      }
+    },
+    {
+      "source": "pathway:RAS-MAPK",
+      "target": "disease:Colorectal Cancer",
+      "relation": "drives",
+      "properties": {
+        "frequency": "KRAS mutations in 40%, BRAF in 10%",
+        "drug_resistance": "Anti-EGFR therapy resistance"
+      }
+    }
+  ]
+}

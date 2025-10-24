@@ -39,15 +39,43 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
   const [isFullscreen, setIsFullscreen] = useState(false)
 
   // Color mapping for different entity types
+  // Color mapping for different entity types - NEON THEME
+  const colorMap: { [key: string]: string } = {
+    disease: '#ff006e',    // Hot Pink
+    gene: '#00f5ff',       // Cyan
+    pathway: '#39ff14',    // Neon Green
+    biomarker: '#bf00ff',  // Electric Purple
+    drug: '#ff8500'        // Neon Orange
+  }
+
   const getNodeColor = (type: string): string => {
-    const colorMap: { [key: string]: string } = {
-      disease: '#9b5de5',    // Purple
-      gene: '#e63946',       // Red
-      pathway: '#2a9d8f',    // Teal
-      biomarker: '#4361ee',  // Blue
-      drug: '#f4a261'        // Orange
-    }
     return colorMap[type.toLowerCase()] || '#6c757d' // Default gray
+  }
+
+  // Get unique entity types present in the current data with counts
+  const getActiveEntityTypes = (): Array<{type: string, color: string, label: string, count: number}> => {
+    const typeCounts: { [key: string]: number } = {}
+    
+    // Count occurrences of each type
+    data.nodes.forEach(node => {
+      const type = node.type.toLowerCase()
+      typeCounts[type] = (typeCounts[type] || 0) + 1
+    })
+    
+    const typeLabels: { [key: string]: string } = {
+      disease: 'Disease',
+      gene: 'Gene', 
+      pathway: 'Pathway',
+      biomarker: 'Biomarker',
+      drug: 'Drug'
+    }
+    
+    return Object.entries(typeCounts).map(([type, count]) => ({
+      type,
+      color: colorMap[type] || '#6c757d',
+      label: typeLabels[type] || type.charAt(0).toUpperCase() + type.slice(1),
+      count
+    })).sort((a, b) => a.label.localeCompare(b.label))
   }
 
   const downloadGraph = async (format: 'png' | 'json') => {
@@ -86,6 +114,7 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
     const actualHeight = isFullscreen ? window.innerHeight - 200 : height
 
     svg.attr('width', actualWidth).attr('height', actualHeight)
+      .style('background', 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)')
 
     // Create zoom behavior
     const zoom = d3.zoom<SVGSVGElement, unknown>()
@@ -148,8 +177,9 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       .attr('xoverflow', 'visible')
       .append('svg:path')
       .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-      .attr('fill', '#666')
+      .attr('fill', '#00f5ff')
       .style('stroke', 'none')
+      .style('filter', 'drop-shadow(0 0 3px #00f5ff)')
 
     // Create links
     const link = container.append('g')
@@ -157,10 +187,11 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       .selectAll('line')
       .data(validLinks)
       .enter().append('line')
-      .attr('stroke', '#666')
-      .attr('stroke-opacity', 0.6)
+      .attr('stroke', '#00f5ff')
+      .attr('stroke-opacity', 0.8)
       .attr('stroke-width', 2)
       .attr('marker-end', 'url(#arrowhead)')
+      .style('filter', 'drop-shadow(0 0 2px #00f5ff)')
 
     // Create link labels
     const linkLabels = container.append('g')
@@ -172,7 +203,9 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       .attr('text-anchor', 'middle')
       .attr('dy', -5)
       .attr('font-size', '10px')
-      .attr('fill', '#666')
+      .attr('font-family', 'Monaco, monospace')
+      .attr('fill', '#39ff14')
+      .style('text-shadow', '0 0 3px #39ff14')
       .text((d: D3Link) => d.relation?.replace('_', ' ') || '')
 
     // Create nodes
@@ -183,9 +216,10 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       .enter().append('circle')
       .attr('r', 20)
       .attr('fill', (d: D3Node) => getNodeColor(d.type))
-      .attr('stroke', '#fff')
+      .attr('stroke', '#ffffff')
       .attr('stroke-width', 2)
       .style('cursor', 'pointer')
+      .style('filter', (d: D3Node) => `drop-shadow(0 0 8px ${getNodeColor(d.type)})`)
       .call(d3.drag<SVGCircleElement, D3Node>()
         .on('start', (event: any, d: D3Node) => {
           if (!event.active) simulation.alphaTarget(0.3).restart()
@@ -214,13 +248,16 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
           .attr('class', 'tooltip')
           .style('opacity', 0)
           .style('position', 'absolute')
-          .style('background', 'rgba(0, 0, 0, 0.8)')
-          .style('color', 'white')
-          .style('padding', '10px')
-          .style('border-radius', '5px')
+          .style('background', 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 46, 0.9))')
+          .style('color', '#00f5ff')
+          .style('padding', '12px')
+          .style('border-radius', '8px')
+          .style('border', '1px solid #00f5ff')
           .style('pointer-events', 'none')
           .style('font-size', '12px')
+          .style('font-family', 'Monaco, monospace')
           .style('z-index', '1000')
+          .style('box-shadow', '0 0 20px rgba(0, 245, 255, 0.3)')
 
         tooltip.transition().duration(200).style('opacity', .9)
         tooltip.html(
@@ -248,7 +285,9 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       .attr('dy', 35)
       .attr('font-size', '12px')
       .attr('font-weight', 'bold')
-      .attr('fill', '#333')
+      .attr('font-family', 'Monaco, monospace')
+      .attr('fill', '#ffffff')
+      .style('text-shadow', '0 0 4px #00f5ff')
       .text((d: D3Node) => d.label.length > 15 ? d.label.substring(0, 15) + '...' : d.label)
       .style('pointer-events', 'none')
 
@@ -326,43 +365,43 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
 
   if (!data.nodes.length) {
     return (
-      <div className="flex items-center justify-center h-64 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+      <div className="flex items-center justify-center h-64 bg-gray-900/80 rounded-lg border-2 border-dashed border-cyan-500/30 backdrop-blur-sm">
         <div className="text-center">
-          <div className="text-4xl mb-2">🔍</div>
-          <p className="text-gray-500">No graph data available</p>
+          <div className="text-4xl mb-2 animate-pulse">🔍</div>
+          <p className="text-cyan-400 font-mono">No graph data available</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className={`bg-white rounded-lg shadow-lg ${isFullscreen ? 'fixed inset-4 z-50' : ''}`}>
+    <div className={`bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-2xl border border-cyan-500/20 ${isFullscreen ? 'fixed inset-4 z-50' : ''}`}>
       {/* Header with controls */}
-      <div className="flex justify-between items-center p-4 border-b border-gray-200">
+      <div className="flex justify-between items-center p-4 border-b border-cyan-500/30 bg-black/40">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800">Knowledge Graph Visualization</h3>
-          <p className="text-sm text-gray-600">
+          <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Knowledge Graph Visualization</h3>
+          <p className="text-sm text-cyan-300 font-mono">
             {data.nodes.length} entities, {data.edges.length} relationships
           </p>
         </div>
         <div className="flex space-x-2">
           <button
             onClick={() => downloadGraph('json')}
-            className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+            className="px-3 py-1 text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded border border-cyan-400/30 hover:from-blue-400 hover:to-cyan-400 transition-all duration-200 shadow-lg shadow-blue-500/20 font-mono"
             title="Download as JSON"
           >
             📄 JSON
           </button>
           <button
             onClick={() => downloadGraph('png')}
-            className="px-3 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+            className="px-3 py-1 text-sm bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded border border-green-400/30 hover:from-green-400 hover:to-emerald-400 transition-all duration-200 shadow-lg shadow-green-500/20 font-mono"
             title="Download as PNG"
           >
             🖼️ PNG
           </button>
           <button
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="px-3 py-1 text-sm bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors"
+            className="px-3 py-1 text-sm bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded border border-purple-400/30 hover:from-purple-400 hover:to-pink-400 transition-all duration-200 shadow-lg shadow-purple-500/20 font-mono"
             title={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
           >
             {isFullscreen ? '⤓' : '⤢'}
@@ -382,53 +421,46 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       <div className="relative">
         <svg ref={svgRef} className="w-full"></svg>
         
-        {/* Legend */}
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 p-3 rounded-lg shadow-md">
-          <h4 className="text-sm font-semibold mb-2">Entity Types</h4>
-          <div className="space-y-1 text-xs">
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#9b5de5' }}></div>
-              <span>Disease</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#e63946' }}></div>
-              <span>Gene</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#2a9d8f' }}></div>
-              <span>Pathway</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#4361ee' }}></div>
-              <span>Biomarker</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#f4a261' }}></div>
-              <span>Drug</span>
-            </div>
+        {/* Legend - Dynamic based on present entity types */}
+        <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm border border-cyan-500/30 p-3 rounded-lg shadow-lg shadow-cyan-500/20">
+          <h4 className="text-sm font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Entity Types</h4>
+          <div className="space-y-1 text-xs font-mono">
+            {getActiveEntityTypes().map(entityType => (
+              <div key={entityType.type} className="flex items-center space-x-2">
+                <div 
+                  className="w-3 h-3 rounded-full shadow-lg" 
+                  style={{ 
+                    backgroundColor: entityType.color,
+                    boxShadow: `0 0 8px ${entityType.color}60`
+                  }}
+                ></div>
+                <span className="text-cyan-100">{entityType.label}</span>
+                <span className="text-purple-400 ml-1">({entityType.count})</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Node details panel */}
         {selectedNode && (
-          <div className="absolute top-4 right-4 bg-white p-4 rounded-lg shadow-lg max-w-xs">
+          <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-sm border border-purple-500/30 p-4 rounded-lg shadow-lg shadow-purple-500/20 max-w-xs">
             <div className="flex justify-between items-start mb-2">
-              <h4 className="font-semibold text-gray-800">{selectedNode.label}</h4>
+              <h4 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">{selectedNode.label}</h4>
               <button
                 onClick={() => setSelectedNode(null)}
-                className="text-gray-400 hover:text-gray-600 text-lg leading-none"
+                className="text-purple-400 hover:text-cyan-400 text-lg leading-none transition-colors duration-200"
               >
                 ×
               </button>
             </div>
-            <div className="text-sm text-gray-600 space-y-1">
-              <p><strong>Type:</strong> {selectedNode.type}</p>
-              <p><strong>ID:</strong> {selectedNode.id}</p>
+            <div className="text-sm text-cyan-100 space-y-1 font-mono">
+              <p><strong className="text-purple-400">Type:</strong> <span className="text-cyan-300">{selectedNode.type}</span></p>
+              <p><strong className="text-purple-400">ID:</strong> <span className="text-cyan-300 text-xs">{selectedNode.id}</span></p>
               {selectedNode.properties?.description && (
-                <p><strong>Description:</strong> {selectedNode.properties.description}</p>
+                <p><strong className="text-purple-400">Description:</strong> <span className="text-cyan-300">{selectedNode.properties.description}</span></p>
               )}
               {selectedNode.properties?.aliases && (
-                <p><strong>Aliases:</strong> {selectedNode.properties.aliases.join(', ')}</p>
+                <p><strong className="text-purple-400">Aliases:</strong> <span className="text-cyan-300">{Array.isArray(selectedNode.properties.aliases) ? selectedNode.properties.aliases.join(', ') : selectedNode.properties.aliases}</span></p>
               )}
             </div>
           </div>
@@ -436,12 +468,12 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
       </div>
 
       {/* Instructions */}
-      <div className="p-3 bg-gray-50 border-t border-gray-200 text-xs text-gray-600">
+      <div className="p-3 bg-black/60 border-t border-cyan-500/30 text-xs text-cyan-300 font-mono backdrop-blur-sm">
         <div className="flex flex-wrap gap-4">
-          <span>💡 <strong>Tip:</strong> Drag nodes to rearrange</span>
-          <span>🔍 <strong>Zoom:</strong> Mouse wheel or +/- buttons</span>
-          <span>👆 <strong>Click:</strong> Select node for details</span>
-          <span>🏷️ <strong>Hover:</strong> View node tooltip</span>
+          <span>💡 <strong className="text-cyan-400">Tip:</strong> Drag nodes to rearrange</span>
+          <span>🔍 <strong className="text-purple-400">Zoom:</strong> Mouse wheel or +/- buttons</span>
+          <span>👆 <strong className="text-pink-400">Click:</strong> Select node for details</span>
+          <span>🏷️ <strong className="text-green-400">Hover:</strong> View node tooltip</span>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import knowledgeGraphData from '../knowledge_graph_final.json'
+import knowledgeGraphData from '../knowledge_graph_enhanced.json'
 
 export interface KnowledgeNode {
   id: string
@@ -58,27 +58,32 @@ class KnowledgeGraphService {
       }
     }
     this.contextInfo = `
-CONTEXT INFORMATION:
-The graph models mechanistic interactions among genes, pathways, biomarkers, drugs, and diseases. Each node category is color-coded and connected through explicit semantic relations such as participates in, targets, associated with, and indicates.
+ENHANCED ONCOLOGY KNOWLEDGE GRAPH v2.0:
+This comprehensive knowledge graph contains detailed molecular mechanisms, clinical data, and therapeutic information curated from authoritative sources including TCGA, cBioPortal, OncoKB, ClinVar, DrugBank, KEGG, Reactome, and UniProt.
 
-Core Entity Types:
-- Disease (purple #9b5de5): Primary disease contexts linking molecular and pharmacological entities
-- Gene (red #e63946): Encodes proteins central to cancer signaling, suppression, or DNA repair  
-- Pathway (teal #2a9d8f): Represents functional networks connecting genes to disease mechanisms
-- Biomarker (blue #4361ee): Defines diagnostic or predictive molecular indicators
-- Drug (orange #f4a261): Therapeutic agents mapped by molecular target and indicated disease
+ENTITY TYPES WITH DETAILED ANNOTATIONS:
+- Disease: Comprehensive cancer information including epidemiology, molecular subtypes, staging, and biomarkers
+- Gene: Detailed protein structure, function, clinical significance, mutation hotspots, and therapeutic implications  
+- Pathway: Molecular mechanisms, regulatory networks, cancer relevance, and therapeutic targets
+- Biomarker: Clinical utility, assessment methods, predictive/prognostic value, and limitations
+- Drug: Mechanism of action, pharmacology, clinical applications, resistance mechanisms, and adverse effects
 
-Relationship Types:
-- participates_in: gene → pathway
-- associated_with: pathway → disease
-- targets_gene: drug → gene
-- targets: drug → pathway
-- indicated_for: drug → disease
-- indicates: biomarker → pathway or disease
+KEY MOLECULAR INSIGHTS:
+- Mutation frequencies and hotspots with clinical significance
+- Drug mechanisms of action and resistance pathways
+- Biomarker assessment methods and clinical cutoffs
+- Pathway crosstalk and regulatory mechanisms
+- Structure-function relationships of key proteins
 
-DISEASE-SPECIFIC CONTEXTS:
-Lung Cancer: Key genes include EGFR, KRAS, ALK, BRAF, MET, TP53, STK11. Drugs include Osimertinib, Gefitinib, Crizotinib, Pembrolizumab.
-Breast Cancer: Key genes include ERBB2, PIK3CA, BRCA1, BRCA2, ESR1. Drugs include Trastuzumab, Lapatinib, Tamoxifen, Olaparib.
+THERAPEUTIC INTELLIGENCE:
+- FDA-approved targeted therapies with approval histories
+- Combination therapy rationales and evidence
+- Resistance mechanisms and overcome strategies
+- Biomarker-guided treatment selection
+- Clinical trial outcomes and efficacy data
+
+PRECISION MEDICINE FOCUS:
+Each entity includes clinically actionable information for personalized cancer treatment, including mutation-specific drug sensitivities, biomarker-guided therapy selection, and resistance pattern analysis.
 `
   }
 
@@ -222,7 +227,7 @@ Breast Cancer: Key genes include ERBB2, PIK3CA, BRCA1, BRCA2, ESR1. Drugs includ
     intent.limitToOne = singularRequests.some(phrase => query.toLowerCase().includes(phrase))
 
     // Extract specific gene names from the query (more precise matching)
-    const knownGenes = ['FGFR1', 'MYC', 'EGFR', 'KRAS', 'TP53', 'BRCA1', 'BRCA2', 'HER2', 'ERBB2', 'PIK3CA', 'ALK', 'ROS1', 'RET', 'MET', 'BRAF']
+    const knownGenes = ['FGFR1', 'MYC', 'EGFR', 'KRAS', 'TP53', 'BRCA1', 'BRCA2', 'HER2', 'ERBB2', 'PIK3CA', 'ALK', 'ROS1', 'RET', 'MET', 'BRAF', 'APC', 'AR', 'NRAS', 'CDKN2A', 'SMAD4', 'MLH1']
     
     // Look for exact gene name matches in the query
     intent.specificGenes = knownGenes.filter(gene => 
@@ -255,7 +260,10 @@ Breast Cancer: Key genes include ERBB2, PIK3CA, BRCA1, BRCA2, ESR1. Drugs includ
     }
 
     // Detect context entity
-    if (query.includes('breast cancer') || query.includes('lung cancer')) {
+    if (query.includes('breast cancer') || query.includes('lung cancer') || 
+        query.includes('colorectal cancer') || query.includes('pancreatic cancer') || 
+        query.includes('prostate cancer') || query.includes('melanoma') || 
+        query.includes('ovarian cancer')) {
       intent.contextEntity = 'disease'
     } else if (intent.specificGenes.length > 0) {
       intent.contextEntity = 'specific'
@@ -455,6 +463,11 @@ Breast Cancer: Key genes include ERBB2, PIK3CA, BRCA1, BRCA2, ESR1. Drugs includ
     const diseaseGeneMap: { [key: string]: string[] } = {
       'breast cancer': ['BRCA1', 'BRCA2', 'ERBB2', 'PIK3CA', 'ESR1', 'TP53'],
       'lung cancer': ['EGFR', 'KRAS', 'ALK', 'ROS1', 'MET', 'BRAF'],
+      'colorectal cancer': ['APC', 'KRAS', 'PIK3CA', 'TP53', 'MLH1'],
+      'pancreatic cancer': ['KRAS', 'TP53', 'SMAD4', 'PIK3CA'],
+      'prostate cancer': ['AR', 'TP53', 'PIK3CA'],
+      'melanoma': ['BRAF', 'NRAS', 'CDKN2A', 'TP53'],
+      'ovarian cancer': ['BRCA1', 'BRCA2', 'TP53', 'PIK3CA'],
       'cancer': ['TP53', 'KRAS', 'EGFR', 'MYC', 'BRCA1']
     }
     
