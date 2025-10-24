@@ -114,7 +114,7 @@ const KnowledgeGraphVisualization: React.FC<KnowledgeGraphVisualizationProps> = 
     const actualHeight = isFullscreen ? window.innerHeight - 200 : height
 
     svg.attr('width', actualWidth).attr('height', actualHeight)
-      .style('background', 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)')
+      .style('background', '#000000')
 
     // Create zoom behavior
     const zoom = d3.zoom<SVGSVGElement, unknown>()

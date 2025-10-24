@@ -1,4 +1,4 @@
-import knowledgeGraphData from '../knowledge_graph_enhanced.json'
+import knowledgeGraphData from '../knowledge_graph_final.json'
 
 export interface KnowledgeNode {
   id: string
